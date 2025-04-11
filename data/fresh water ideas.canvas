@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"f8379327a224c64e","x":-125,"y":-30,"width":250,"height":60,"type":"text","text":"water leakages"},
+		{"id":"b7ca87b9b31e8111","x":-400,"y":119,"width":400,"height":218,"type":"file","file":"IoT-01-00026-v2.pdf"}
+	],
+	"edges":[
+		{"id":"6eb1e43cf62796ae","fromNode":"f8379327a224c64e","fromSide":"bottom","toNode":"b7ca87b9b31e8111","toSide":"top"}
+	]
+}

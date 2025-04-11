@@ -1,0 +1,26 @@
+{
+	"nodes":[
+		{"id":"a9d0abf75ebf5c44","x":-125,"y":-30,"width":250,"height":60,"type":"text","text":"Montreal project scoping"},
+		{"id":"76751bd6c8bfc671","x":-125,"y":-30,"width":250,"height":115,"color":"4","type":"text","text":"## DoD in Montreal\nwe'd like to be able to find sensor drift issues"},
+		{"id":"7f6e16cea7ad855a","x":-441,"y":59,"width":250,"height":179,"type":"text","text":"### A sites and B sites \nare expected to be correlated as there are 2 systems - the north and south"},
+		{"id":"b3af0633fea7f55c","x":125,"y":367,"width":543,"height":326,"color":"4","type":"text","text":"## final report:\n### current Dash app \n - results of the project are presented in an interactive form\n - there is a place that groups together correlated signals and let user switch between different sites\n - there is a place to visualise detected anomalies on each site\n - there is a box that shows metric"},
+		{"id":"0d2e0d313f165caa","x":-375,"y":301,"width":291,"height":165,"type":"text","text":"### topology map\nwe need to move all the sites to the map to have an understanding of what is what\n"},
+		{"id":"ba230d1a45abe9a0","x":-500,"y":-309,"width":250,"height":231,"type":"text","text":"### at least 2 channels\nwe assume that the data is susspicious while there is a drift between at least 2 signals - ie correlation model changes in a period of time\n"},
+		{"id":"a2a82f8b7b9b5d46","x":125,"y":-460,"width":263,"height":151,"color":"3","type":"text","text":"### data availability\nwe can't have some data from Montreal which might be important in modelling"},
+		{"id":"f65bdb2492c6f969","x":528,"y":-355,"width":280,"height":233,"color":"3","type":"text","text":"### temperature \nmay explain the drifts that we observe which have happens to be seasonal - ie each beginning of the year - during winter "},
+		{"id":"e31b12add0fcad5d","x":418,"y":-53,"width":325,"height":143,"color":"3","type":"text","text":"### external data sources\nwe need to find our own source of rain data and temperature data"},
+		{"id":"a3e96263e5d06821","x":278,"y":164,"width":250,"height":174,"color":"3","type":"text","text":"### rain gauges\nthere is a chance that river data might contain some information as it's related to overflow during rain event\n"},
+		{"id":"0d53f771eb9dd995","x":-394,"y":-640,"width":452,"height":218,"color":"4","type":"text","text":"### metric\nin order to measure our models we'd need to establish ground true - this might be future discussed with client and corrected if we're wrong at some point but in initial version we'd like to create a tagged anomelies signals for sensors which we'd like to model"}
+	],
+	"edges":[
+		{"id":"cd9640c89701a251","fromNode":"76751bd6c8bfc671","fromSide":"top","toNode":"a2a82f8b7b9b5d46","toSide":"bottom"},
+		{"id":"50d38dde76b63091","fromNode":"a2a82f8b7b9b5d46","fromSide":"right","toNode":"e31b12add0fcad5d","toSide":"left"},
+		{"id":"719d8b393edd4347","fromNode":"e31b12add0fcad5d","fromSide":"top","toNode":"f65bdb2492c6f969","toSide":"bottom"},
+		{"id":"da1099e76cd00258","fromNode":"e31b12add0fcad5d","fromSide":"bottom","toNode":"a3e96263e5d06821","toSide":"right"},
+		{"id":"354a65c5b62d4392","fromNode":"7f6e16cea7ad855a","fromSide":"right","toNode":"0d2e0d313f165caa","toSide":"left"},
+		{"id":"289c830f7a52c766","fromNode":"76751bd6c8bfc671","fromSide":"top","toNode":"ba230d1a45abe9a0","toSide":"right"},
+		{"id":"2e53eea57cae1b3f","fromNode":"76751bd6c8bfc671","fromSide":"right","toNode":"b3af0633fea7f55c","toSide":"left"},
+		{"id":"3d21b24b13419cb7","fromNode":"76751bd6c8bfc671","fromSide":"left","toNode":"0d53f771eb9dd995","toSide":"bottom"},
+		{"id":"11be0735e2dba867","fromNode":"ba230d1a45abe9a0","fromSide":"bottom","toNode":"7f6e16cea7ad855a","toSide":"top"}
+	]
+}

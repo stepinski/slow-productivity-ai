@@ -1,0 +1,1 @@
+alias ssh="kitty +kitten ssh"  to have kitty in ssh terminal

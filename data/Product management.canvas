@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"1a78127398a8f9c3","x":-540,"y":-240,"width":420,"height":440,"color":"2","type":"text","text":"# Toronto US\n## must haves\n- [ ] User runs historical flow (Animation)\n- [ ] User runs prediction for selected date\n- [ ] There is a details view when pipe selected\n\n## nice to have\n- [ ] \n- [ ] aa\n\nout of scope\n- [ ] a\n\n"},
+		{"id":"a997e15af1bfc947","x":260,"y":-300,"width":250,"height":240,"color":"4","type":"text","text":"in order to run predictions we need more data on GiS layer - currently there is no way to know that pipe is related to SQL data"},
+		{"type":"text","text":"# TS exporter\n## must haves\n- [ ] user exports selected TS table to parquet from SQL\n## nice to have\n- [ ] Kafka destination\n- [ ] parquet data lake local data reading example polars or ducdb\n- [ ] dockerized version\n\nout of scope\n- [ ] high availability\n- [ ] service\n\n","id":"ecc6e7878f8e0d70","x":-520,"y":400,"width":420,"height":440,"color":"2"}
+	],
+	"edges":[
+		{"id":"7efe8304cef5cac0","fromNode":"1a78127398a8f9c3","fromSide":"right","toNode":"a997e15af1bfc947","toSide":"left"}
+	]
+}

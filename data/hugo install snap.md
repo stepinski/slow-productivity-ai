@@ -1,0 +1,1 @@
+https://gohugo.io/getting-started/installing/#snap-package

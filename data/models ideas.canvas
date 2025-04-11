@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"64b1703818e9aa70","x":-401,"y":-373,"width":250,"height":60,"type":"text","text":""},
+		{"id":"fab7746d8437cd98","x":105,"y":-263,"width":400,"height":549,"type":"link","url":"https://arxiv.org/pdf/1704.02971.pdf"},
+		{"id":"2cbb351c5d194a34","x":-601,"y":-179,"width":400,"height":540,"type":"link","url":"https://arxiv.org/pdf/1703.07015.pdf"},
+		{"id":"1f2e144ab0d8e781","x":-276,"y":-343,"width":400,"height":400,"type":"link","url":"https://arxiv.org/pdf/1809.04206v2.pdf"}
+	],
+	"edges":[]
+}

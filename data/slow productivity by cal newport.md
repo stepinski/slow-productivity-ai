@@ -1,0 +1,15 @@
+main ideas of the book:
+- how we shall measure productivity?
+- the former measurements not working for knowledge workers:
+	- factory workers, agriculture - what they did during an hour - you can optimize the metric if its single equal task repeatedly done by the team - than you can compare their productivity
+	- factory in ford in US - car manufacturing can by decomposed to production lines and optimize the process
+- visual productivity for knowledge workers is misleading as it pushes workers to:
+	- stay in the office to gain visibility - im visible so im doing something
+	- stick to 40 hours week which was originally invented to decrease phisical workers fatigue at production lines
+	- chose smaller and easier tasks - low focus - low hanging fruits rather than challenging ones that require more focus and longer periods of focus
+- pseudo-productivity:
+	- everybody in knowledge takes it as granted that there is no other way round
+	- new options like laptops / network / emails / slack makes settings that are naturally setup for pseudo productivity
+	- myra ( virtual assistant ) says about a group of knowledge workers that they have so many things on their plates and so many other they want to accomplish that they seem to be overhelmed by the amount of work and they think to solve it by working more
+	- working more - taking your work to family meetings / kids games and other places doesnt solve the problem but rather make it worse.
+	- 

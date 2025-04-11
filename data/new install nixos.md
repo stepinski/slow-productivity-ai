@@ -1,0 +1,9 @@
+- shirnk win to minimal resources
+- fresh install nixos from stick
+- prepare new nixos config including :
+	- https://knowledgebase.frame.work/en_us/optimizing-fedora-battery-life-r1baXZh
+	- https://github.com/NixOS/nixos-hardware/tree/master
+	- https://github.com/stepinski/randomstuff - 
+	- take clean approach mixing fresh config from install with nixos-hardware for dell-xps + my software
+	- include kitty setup
+	- remember auto-cpufreq and others like pipewire

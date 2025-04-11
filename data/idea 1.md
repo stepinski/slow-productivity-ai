@@ -1,0 +1,1 @@
+ExpertAD -> anomaly detection technique based on expert models like swmm - it consists of physics described by the model and than assuming that we have a real-time data for different locations in the model we may detect anomalies based on their variation from model predicted data

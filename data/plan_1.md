@@ -1,0 +1,4 @@
+- planning session today
+- learn logseq - how to use it for daily journal routine
+- check my talking plans
+- 

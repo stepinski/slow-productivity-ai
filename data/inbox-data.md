@@ -1,0 +1,1 @@
+https://duckdb.org/2022/10/12/modern-data-stack-in-a-box.html

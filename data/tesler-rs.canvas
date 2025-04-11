@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"c490aa11b97aff4c","x":-125,"y":-105,"width":250,"height":50,"type":"text","text":"tesler cmd written in rust"},
+		{"id":"c25642d6c8e60a93","x":-125,"y":-30,"width":250,"height":60,"type":"text","text":"it makes use of twitter rust ML engine "},
+		{"id":"9085bf0b128c5642","x":-520,"y":-310,"width":320,"height":410,"type":"link","url":"https://developer.okta.com/blog/2022/01/28/webassembly-on-kubernetes-with-rust"},
+		{"id":"b4e3982ab9aebe0a","x":33,"y":106,"width":447,"height":214,"type":"text","text":"- super fast task sheduler with multithreading - parallel, multi node procssing"},
+		{"id":"1f3c66bdd87ee218","x":220,"y":-370,"width":400,"height":400,"type":"link","url":"https://github.com/twitter/the-algorithm/tree/main/navi"}
+	],
+	"edges":[]
+}

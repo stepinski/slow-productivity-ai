@@ -1,0 +1,5 @@
+- are flags in all transactions even we get from client to predict
+- are the flags needed to count counters( features)
+- why we use is_return flag as label for risk?
+- why we use is_return more than once for user - how we group user transactions to different labels ( wiuth potentially different is_return values) - is this augumenting data to fit?
+- why do we fit risk with is_return and we predict if guy is default or not

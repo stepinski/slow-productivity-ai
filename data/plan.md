@@ -1,0 +1,4 @@
+- [ ] install avante - copilot neovim https://www.youtube.com/watch?v=BEjO6AZdh6M
+- [ ] install the chat app for console that uses the model 
+- [ ] install mechvibes ( just to try this shit)
+- [ ] 

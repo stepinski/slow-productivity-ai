@@ -1,0 +1,20 @@
+weekly template
+- introduction on planning - multi scale planning - a way to make your big initiative influence what you're doing throughout the day without forcing you to think about it during the day
+- 
+	- start from quarterly goal planning - big initiative in quarter - strategic goals
+		- ideal lifestyle
+	- beginning of every week you plan the week based on this q. goal 
+		- take calendar events
+		- task management system 
+			- > decide what to move where and how to freeup time to focus in focus periods
+- meeting / no meeting days
+	- rules on days
+- way i manage outliers of rules - what i do 
+- regular rules and limits
+	- after each meeting i have a 15 minutes to process this meeting
+	- im only duing 1 speaking preparation a week
+- autopilot sheduling (time protection)
+	- friday afternnon i go to cabin in the woods
+- => it all goes to my weekly template
+	- it's an ideal week
+	- 

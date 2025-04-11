@@ -1,0 +1,1380 @@
+{
+  "name": "David Daniels",
+  "text": "OK."
+}
+{
+  "name": "David Daniels",
+  "text": "Uhm."
+}
+{
+  "name": "David Daniels",
+  "text": "We have a partnership on account and this apple pie in the presentation."
+}
+{
+  "name": "David Daniels",
+  "text": "Super."
+}
+{
+  "name": "David Daniels",
+  "text": "OK, UM."
+}
+{
+  "name": "David Daniels",
+  "text": "OK, Miles, water and not all the jour our commercial like the there's introduction. Just just take a or connect with mold. So frank."
+}
+{
+  "name": "David Daniels",
+  "text": "'cause celeb time off work here and that's so not reunion like on some like no company over camel say avec in discussion there not comprehension."
+}
+{
+  "name": "David Daniels",
+  "text": "Uhm, survived in full new set an objective primarily the the elaboration improve the no comprehension."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh ladonia rino. Yeah, value."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, uh, they they concept in disable Poly improveme stepinski full purpose the the discussion also on no no no. These are organizational tree are welcome also avexa."
+}
+{
+  "name": "David Daniels",
+  "text": "I play a should be Pollyanna, not processes that develop on the solution."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, hum? Say chemicals."
+}
+{
+  "name": "David Daniels",
+  "text": "Uhm, fact comma, not no."
+}
+{
+  "name": "David Daniels",
+  "text": "So a dependency as you know on her new way, daughter company Piotr Fei overpowering purpose that Casca, Casca, squalor, kiss, kiss, chalnessa of our compressions it app on Chrome annoy David Daniels Shree Response app or they won't she she called data."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, xvid. Tilney. A at a David Como pre Frank. A news of Oh no colleague who see Kiki Papa. False Ma city important. Will New Devil Nokia leg down demander data science pre engineering subset Appel pour repondre Ocasio."
+}
+{
+  "name": "David Daniels",
+  "text": "See other Casio important if all the Rep on the two sweet audio data on the they they show dunker David ask."
+}
+{
+  "name": "David Daniels",
+  "text": "They fell in and introduce you to play."
+}
+{
+  "name": "David Fromont",
+  "text": "Wait."
+}
+{
+  "name": "David Fromont",
+  "text": "David formal don't care VP Technology solutions."
+}
+{
+  "name": "David Fromont",
+  "text": "That's fine. OK."
+}
+{
+  "name": "David Fromont",
+  "text": "Uh, should you seek a?"
+}
+{
+  "name": "David Fromont",
+  "text": "Let me see. Frank's up 'cause Lt."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "Those are also Frank Carzoli."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "Miss Wheeler, dismiss that."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "Dave out global pool, Carl."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "There are two things that we need to do is say here. There is only kept affiliate Carl."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "Yeah, just give out it to ski development."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "This is a."
+}
+{
+  "name": "David Daniels",
+  "text": "Mike, Mike Massey, Frank."
+}
+{
+  "name": "Mike McDonald",
+  "text": "Hi, Mike, MC Donald and VP engineering for Carl Data solutions."
+}
+{
+  "name": "David Daniels",
+  "text": "And pyott."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "If it's better for everyone, we can switch to English, right? I don't want anyone to be left out and."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "And not understand what we're saying."
+}
+{
+  "name": "David Daniels",
+  "text": "We'll, we'll it'll be a mixed selected mixed leader."
+}
+{
+  "name": "Piotr Stepinski",
+  "text": "Good."
+}
+{
+  "name": "David Daniels",
+  "text": "Appreciate that. Thank you, David."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "K."
+}
+{
+  "name": "Piotr Stepinski",
+  "text": "Good."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "Appreciate that, David."
+}
+{
+  "name": "Piotr Stepinski",
+  "text": "MM."
+}
+{
+  "name": "Piotr Stepinski",
+  "text": "Is there a better Piotr just responsible and data science?"
+}
+{
+  "name": "David Daniels",
+  "text": "Shake her away."
+}
+{
+  "name": "David Daniels",
+  "text": "Again, I just wanted to make sure that we had the right people on the call to answer any questions, no matter what they are. And of course we are governed by the non disclosure that is has executed. So everything that we say obviously is governed by by that that that signed agreement Ahmed's kuvia just until June of what the Equipe."
+}
+{
+  "name": "David Daniels",
+  "text": "So OK."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "Yeah, so, uh, I made up the lattice, so I'm the team lead of the data team in Hilo."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "And uh Hilo, we cover like 3 axes of extracting knowledge from data, let's say. So we maintain the data lake and the company and we provide."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "Uh, uh. The rest of the company with the BI Reportes and also with all the data science acts."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "Uh to the company. So we are like seven or eight people and in the team and here is a here with us, a Odile and I will."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "Ask Adele 2 to present herself."
+}
+{
+  "name": "Odile Noël",
+  "text": "Yes, thanks. So I'm product owner for the data team. I work closely with Ahmed trying to develop a solutions for the data internally but also for clients to to bring the the smart in smart home."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "And I'm David, VP tech. So overseeing the development of our virtual power plan and our smart home and smart building ecosystems, including the hardware components and all of the software teams. I think I I introduced Hilo last time, but briefly we went from 7 to 154. Now employees over the past two years."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Over the whole geography of Quebec, covering mostly winter peak, shaving products for now in terms of energy control, but we're rapidly diversifying into other products for Hydro Quebec as well. Our ecosystems have begun by controlling."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Line voltage thermostats and now include water heaters, smart car chargers as well as HVAC on the building side. So we're sitting on a whole bunch of rich data streams that we have to mine and and make the most of our yeah out of."
+}
+{
+  "name": "David Daniels",
+  "text": "Hey, message."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "Thank you for never, David."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, so let let me get into a notre comprehension. Let's start avec itself como civic not complain. So again, our executive is to better understand mutually. I think as a as a, as a potential outcome. From this we'd like to be in a in a stronger position to come back with a uh, a formal proposal, but it was important from from my side, from our side excuse me to better understand."
+}
+{
+  "name": "David Daniels",
+  "text": "Your needs, and I think we've uncovered one or two important items and that's worth double clicking on with you."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, so thanks. Thank you, David. I'm, I'm sure you're happy to approve. That could be savvy. Ballet, Hilo mono monitor. Or they thermal step Pascal. Show full. It can't tell the pre sales down the residence at the place."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, not comprehension, second setting environment."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, the Daniel? You new new servo regalia."
+}
+{
+  "name": "David Daniels",
+  "text": "They donate the data the the Hilo a digital Quebec."
+}
+{
+  "name": "David Daniels",
+  "text": "So the the the environment demonstrated some level of complexity and heterogeneous."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, things heterogeneity and I think one of the."
+}
+{
+  "name": "David Daniels",
+  "text": "The things that we we hope to discuss is."
+}
+{
+  "name": "David Daniels",
+  "text": "Perhaps a bit more about what that means, but the."
+}
+{
+  "name": "David Daniels",
+  "text": "The the core thing we see for you guys is a biz. When I called him a short term requirement."
+}
+{
+  "name": "David Daniels",
+  "text": "Said that, he don't if they they very tab anomaly."
+}
+{
+  "name": "David Daniels",
+  "text": "Uhm, Ada compiler locales perform understand the root causes of the anomalies."
+}
+{
+  "name": "David Daniels",
+  "text": "Within."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, within the the network, the Razzle, Hilo and."
+}
+{
+  "name": "David Daniels",
+  "text": "That that in our, in our parlance at at Carl, we call that up a pain."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, I think you will. You'll notice when we we talked that we're kind of disciples of Lean B to B."
+}
+{
+  "name": "David Daniels",
+  "text": "And our our desire is for a partnership."
+}
+{
+  "name": "David Daniels",
+  "text": "Uhm, specifically the."
+}
+{
+  "name": "David Daniels",
+  "text": "The thing the next point I think is an important one also."
+}
+{
+  "name": "David Daniels",
+  "text": "We understand that Hilo wants to acquire an understanding of our solution."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, and also potentially a level of support."
+}
+{
+  "name": "David Daniels",
+  "text": "To be able to apply the solution internally."
+}
+{
+  "name": "David Daniels",
+  "text": "And within a other other scenarios."
+}
+{
+  "name": "David Daniels",
+  "text": "This is a a key point I think."
+}
+{
+  "name": "David Daniels",
+  "text": "What what? I thought I heard the last time we met. And maybe I'm mad. Correct me is."
+}
+{
+  "name": "David Daniels",
+  "text": "Where? Where will I think the question is you poses or at least the statement you made as the prime. Your preference at Hilo is the solution resides."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, with with you guys?"
+}
+{
+  "name": "David Daniels",
+  "text": "It it is that is that a as a result of regulatory issues, technology issues."
+}
+{
+  "name": "David Daniels",
+  "text": "Could you?"
+}
+{
+  "name": "David Daniels",
+  "text": "Explain to us this is this. This point is safe. Particle new the southward?"
+}
+{
+  "name": "David Daniels",
+  "text": "A man who exact demo. I'll poop lassala like technology where we can place the technology to to do our best fit, to accomplish that goal."
+}
+{
+  "name": "David Daniels",
+  "text": "And I I ask a if if you could clarify."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Ah."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "Yeah, true."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Uh, let Ahmed speak to the the technical component and then maybe I can give a bit of legal and regulatory background to the Hydro Quebec situation."
+}
+{
+  "name": "David Daniels",
+  "text": "OK."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "OK, for for me. Uh, specially inside the team. It's more like a vision we want. We we know that this kind of problems we will we will have it all the time with different scenarios."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "And we want to put more effort to enhance our expertise regarding fixing all these data quality."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "Uh, and also we put a lot of effort in our end also uh to uh to build a solution that can support."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "A heavy computing, even with like complex machine learning algorithms or or or models. So we need."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "We need to this is as as you said, the David uh, and you you understood like the my points like very well we need to have the solution. Uh like."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "Developed inside UH Hilo and we need also the computing to be also in internal internal 2 evil so."
+}
+{
+  "name": "David Daniels",
+  "text": "So that's compute storage."
+}
+{
+  "name": "David Daniels",
+  "text": "All, all of those components is that what what the vision is."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "Yeah. So we as, as I said, we in the beginning we we thought that you will provide guys like and expertise to help us to uh to develop this those models. But in our end but after our first meeting we saw that it wasn't what we understood what do you understood in the beginning. So we clarified this on the second meeting so."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "And then there is the jurors to healthy dose of paranoia that comes with being an organ of hydro Quebec. The data is is strictly under lockdown and not to be exposed even outside of Canada, so everything needs to reside locally on Canadian soil. Processing needs to happen locally. So all of our cloud ecosystems are curtailed to to Canada right now and the data isn't allowed to come out of the ecosystem."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "And this is kind of a differentiating factor for us as well in terms of how we compare with gaffa and and you know the other players out there that offers smart thermostats solutions where you don't know what the behavioral data is going to be used for. With Hydro Quebec, you have the state guaranteed that it's going to stay in private hands while in public hands should I save button in private and it won't be monetized through other channels. So for us, the the control over the whole life cycle of the data."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Is paramount and the cyber security concerns around that, especially since the the latest breaches that occurred in Quebec a few years ago. If you guys heard about their job, thank you know the paranoia, paranoia level has been quite hi. I'm so that's another concern that you know is is at the back of our minds and kind of pushes us into direction of keeping very close control of the algorithms and whatever is happening with the data."
+}
+{
+  "name": "David Daniels",
+  "text": "Hey."
+}
+{
+  "name": "David Daniels",
+  "text": "Uhm, it does. Does that mean that we can come up with a plan?"
+}
+{
+  "name": "David Daniels",
+  "text": "To get to that point? Or is this a prerequisite kind of day one?"
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Yeah, it's it's a. It's a prerequisite. So it doesn't mean that we can't work with data outside over equal system. It means that any."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Customer identifiable data that hasn't been anonymized cannot, you know, get out of the ecosystem. And depending on the size of the data set, it can't go out of the ecosystem either, because at that point, it becomes."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Yeah, it becomes a floating data set that has specific characteristics which we don't know what that could lead to. So we."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "We certainly want to maximize everything happening on Canadian soil, that's for sure."
+}
+{
+  "name": "David Daniels",
+  "text": "K."
+}
+{
+  "name": "David Daniels",
+  "text": "There's a there's a question I wanted to ask Madden, Odile and and potentially David is what was it about our our last meeting was there one particular element that stood out as something that you were really."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "The the third the the only thing that maybe I I was waiting to see in."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "No, I'm in this meeting. Is what? Because you, you guys. You you promised. Like we will see what we can do to maybe respect what what you are asking. So I was waiting for scenario on on the way on how we will work together based on what we what we need to do now."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "Based on our requirements."
+}
+{
+  "name": "David Daniels",
+  "text": "Are there? Are there any other prerequisites that that that we should be?"
+}
+{
+  "name": "David Daniels",
+  "text": "That we should be aware of."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh. Part of opening the kimono with it, just speaking openly in partnership. We need to."
+}
+{
+  "name": "David Daniels",
+  "text": "Come back internally at at Carl UM to discuss how we can."
+}
+{
+  "name": "David Daniels",
+  "text": "Make this happen with this prerequisite."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, and it's not a show stopper. We just need to to to kind of."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh. Figure, figure out how that would work."
+}
+{
+  "name": "David Daniels",
+  "text": "But we want to make it happen and part of the reason Frank is on the call and as well as as as Mike and Piotr's we we want to make that happen. We just have to, we have to figure out."
+}
+{
+  "name": "David Daniels",
+  "text": "A way that that we can do it and we can do it fast."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "So, and, you know Ahmed and I didn't stop me at any point because I don't want to step on your toes and I might inadvertently, but our core strategy is centered around data, right? So with any core piece of technology."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "There can be phasing, but at some point we want it to be 100% internal and I'll say that opening the communal completely at the beginning or our strategy relies on data. It's a core part of the strategy. We need to have control over the whole."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Uh strata of technology and we need to understand where it's setting and if we do by external components or by or rely on external technology, we need to have confidence that that is something we have full control over down the line and something that we can we can work with her stuff. So whatever solution we get into."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "If it's, if it's a closed source solution. If it's a binary solution and we don't have visibility on its internals, it becomes kind of like the technologies we use. You know from Microsoft out of the box or things like that where we don't have the source code of that, but we can rely on the fact that Microsoft is going to be there five years or or eight years down the line, right. So there's a notion of risk there which needs to be taken care of. You can say maybe it's escrow for the code, but I think it's a bit more than that because."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "If we're relying on those pieces of technology, we probably want to customize them and we probably want to have some insight into how they're put together. So for me."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "If we do get into a deal with an external company and it's not a service deal and it's a technology deal, those are the concerns that are underlying, how does it live down the line? How can we customize it? How can we work together to shape it? And does it accelerate us or does it slow it down slow as them, right. So that's what's going on inside my head, I don't know. And then and then if you have a slightly different perspective or something else that you want to add on top of that."
+}
+{
+  "name": "David Daniels",
+  "text": "Our methodology, which is the next slide, is about adapting to our clients specific needs or requirements. So we we have a solution and we want to I'll, I'll show that slide in a minute. But in essence what what I think you're saying is that we're in a we're in a very good position to come back with a scenario."
+}
+{
+  "name": "David Daniels",
+  "text": "Uhm, and and and make happen obviously. Like I said that we need to to to, to, to study it and work it and come back with a very firm. Here's here's the scenario. Here's how it would how it would go."
+}
+{
+  "name": "David Daniels",
+  "text": "Cool."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, so it's all good there, the."
+}
+{
+  "name": "David Daniels",
+  "text": "But we added these two points."
+}
+{
+  "name": "David Daniels",
+  "text": "I think you talked a bit about."
+}
+{
+  "name": "David Daniels",
+  "text": "Uhm."
+}
+{
+  "name": "David Daniels",
+  "text": "The environment as a result of the the legal regulatory, it's very, very clear, very understood is are there, are there any partnerships that we should be aware of? And I know my colleagues wanted to know where you are you guys, are you guys a WSU Azure? I imagine you're both and they're probably all hosted within the province is is that, is that correct the technical?"
+}
+{
+  "name": "David Saint-Germain",
+  "text": "99.8% Azure. Uhm, you know we we have some small EWS components, but it is not."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "If we do need to host something on a WS, it's not a catastrophe, but it does require that we maintain a secondary."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Uh pipeline with what we we have expertise internally, we just don't use it as of right now for anything except the Alexa integrations for the home. So there's not much infrastructure deployed on there right now. And I would like to keep it that way as much as possible to not have conflicting ecosystems although down the line we will be multi cloud for resiliency purposes, so."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "If it is hard requirement on your side, it's something we can take a look at."
+}
+{
+  "name": "David Daniels",
+  "text": "We're we're partnered with Azure, so I I mean, sorry guys, correct me if I'm wrong, but we're partnered with I with Azure and and so I think we're cool. Mike is nodding his head at the end are VP of Engineering, so."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "OK."
+}
+{
+  "name": "David Daniels",
+  "text": "That's. I just, we just wanted to clarify and understand. So it sounds it sounds to me like you're a Mike, I'm an ex Microsoft employee. So you're you sound to me like a Microsoft shop."
+}
+{
+  "name": "David Daniels",
+  "text": "It's."
+}
+{
+  "name": "David Daniels",
+  "text": "Which is which is good."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Yep."
+}
+{
+  "name": "David Daniels",
+  "text": "The the the last item I had on this slide is something I brought up in the last meeting and I know it's not something immediate. The short term is the anomalies and and have it be done within within your environment."
+}
+{
+  "name": "David Daniels",
+  "text": "But one of the aspects that we have that's quite quite strong and quite flexible is."
+}
+{
+  "name": "David Daniels",
+  "text": "Last spender prediction."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, yes, we don't. We can detect the anomalies, but we think that there's a whole."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, undiscovered. Or a an opportunity for Hilo to look at the whole predictive capability and and."
+}
+{
+  "name": "David Daniels",
+  "text": "Is that something that?"
+}
+{
+  "name": "David Daniels",
+  "text": "Uh."
+}
+{
+  "name": "David Daniels",
+  "text": "It is important for Hilo is is that a a primary thing is it's still a secondary thing or I'm. I'm just curious if if we have this as part of our solution with this, could this be something you could use?"
+}
+{
+  "name": "David Saint-Germain",
+  "text": "I guess the question is predicting what?"
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Because it really shapes D answered that we're going to give, right."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Wow."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "But the and the prediction will be part of the of the anomaly detection, because what we want to do is to, uh, gap fill the data. So when when we detect that there is a normally or big gap, we want to predict it, you know to in order to have like a continuous data instead of data with with gaps you know."
+}
+{
+  "name": "David Fromont",
+  "text": "Yeah."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "So is that what we were talking about the the gap filling part of the prediction or were we inferring some other features?"
+}
+{
+  "name": "David Daniels",
+  "text": "I I was potentially thinking a bit more and yeah, well it potentially forecast, but what if you could look at historic data to be able to Patrick could predict?"
+}
+{
+  "name": "Odile Noël",
+  "text": "Like a forecast."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, geographies where you could, where you could expand with more devices?"
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, and I'm and potentially that would would help in terms of adoption."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, of the devices across the network?"
+}
+{
+  "name": "David Daniels",
+  "text": "That that was. That was one thing that I thought I I used to work for Bell and and."
+}
+{
+  "name": "David Daniels",
+  "text": "And we use models to predict where to put fiber in first and and I had thought that maybe that."
+}
+{
+  "name": "David Daniels",
+  "text": "That potentially there's a an aspect that that could fit within Hilo the same way that could that could say."
+}
+{
+  "name": "David Daniels",
+  "text": "Go here. Go there or you know, from a priority point of view which would enhance the adoption."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, potentially, but. But I think you're right. We we haven't really talked that there are there. There are other ways that we can and you know work with the with Hilo and and talk about prediction. But the the aspect of the anomaly detection does include and incorporate."
+}
+{
+  "name": "David Daniels",
+  "text": "The the prediction capabilities."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Uhm."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "For the the sales component, I think that might be a."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Hard nut to crack in the sense that."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "The deployment value is tight to infrastructure constraints, which exist at Hydro Quebec, so they know very well where they have those infrastructure constraints and or we need to focus so in that sense, I I feel there might be less value in the predictive aspect of of that."
+}
+{
+  "name": "David Daniels",
+  "text": "Already."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "I think there's other predictive things that might be interesting, but."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Not sure where we're ready to talk about that yet here in this in this call."
+}
+{
+  "name": "David Fromont",
+  "text": "K."
+}
+{
+  "name": "David Daniels",
+  "text": "Understood. Understood."
+}
+{
+  "name": "David Fromont",
+  "text": "Uh on the technical aspect, Piotr, you you told me that perhaps you have some question regarding. You said you use Azure, do you use also Kubernetes and things like that?"
+}
+{
+  "name": "Piotr Stepinski",
+  "text": "Yeah. So that would be that would be interesting to to me."
+}
+{
+  "name": "Piotr Stepinski",
+  "text": "Uh."
+}
+{
+  "name": "Piotr Stepinski",
+  "text": "So yeah, especially Kubernetes is one thing that I wanted to ask you, if you if you if you use Kubernetes for any kind of deployments that you currently have and I and I I was assuming that in Azure you probably use databricks for."
+}
+{
+  "name": "Piotr Stepinski",
+  "text": "For for data science stuff, AM I right or?"
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "Yes. And yet."
+}
+{
+  "name": "Piotr Stepinski",
+  "text": "System Miller OK."
+}
+{
+  "name": "Piotr Stepinski",
+  "text": "Thank you."
+}
+{
+  "name": "David Fromont",
+  "text": "Keep it."
+}
+{
+  "name": "David Daniels",
+  "text": "Anything else from the Carl team to question?"
+}
+{
+  "name": "Mike McDonald",
+  "text": "Just just, uh, in the same vein, your your data pipeline in terms of how you adjust data and get it into data like what what technologies are using on that side?"
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "For the most of the data sources and for the schedule of the jobs, we are using airflow."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "And all the jobs I've developed with pyspark."
+}
+{
+  "name": "Mike McDonald",
+  "text": "K."
+}
+{
+  "name": "Mike McDonald",
+  "text": "K."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "And maybe one one thing that."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "I I don't. Well, it might affect what you guys are or thinking of."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "We have a very strong principle around automating everything that can be automated. Everything we do comes with infrastructure as code first. So we use Terraform to really spawn the whole system end to end, including monitoring and and all of the alerts that come with it for operational stability. So of course you know if we do deploy components of your solutions on our side will need to terraform them as well."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "We don't want anything to be manually manually put together."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "This weekend."
+}
+{
+  "name": "Mike McDonald",
+  "text": "Yeah, that that makes sense."
+}
+{
+  "name": "Mike McDonald",
+  "text": "Yeah, we we operate the same way on our on our side to Ansible, but yeah."
+}
+{
+  "name": "David Daniels",
+  "text": "I'm."
+}
+{
+  "name": "David Daniels",
+  "text": "I'll. I'll move on then to the next slides."
+}
+{
+  "name": "David Daniels",
+  "text": "This is the UM."
+}
+{
+  "name": "David Daniels",
+  "text": "Development process, so we we have a a current solution here on the left hand side city. So actually this is a slide that we can review. Again we have a full slide version of this. I'm going to hand this over after this page to to David to talk David Fairmont my colleague to talk a bit more. But so the good news is here are our approach or philosophy is to where we're here in this middle of under the discovery of vast section we we want to identify problems."
+}
+{
+  "name": "David Daniels",
+  "text": "We believe we've identified the anomalies issue and that's a high priority. We want to identify how to personalize, customize, we want to."
+}
+{
+  "name": "David Daniels",
+  "text": "We want to identify what potentially the ROI could be an."
+}
+{
+  "name": "David Daniels",
+  "text": "Produce."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, proposal. Uh. A proposition? Anna Anna. Anna plant high. So a a project plan or a work plan together with a proposal as the as a the next step and and really what we want to do is this concept shown the PMV we want to create an MVP for this solution. A crystal clear defined MVP."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh, so that you guys are 100% aware and you're involved in in the in the discussion around you know what is the proposal, what is the positional sequella Pantai SQL Azure Tech to? What is the architecture? So I I think this is good news that that that that we can."
+}
+{
+  "name": "David Daniels",
+  "text": "Where where we want to adjust and and pivot the way we do things to to meet that that that legal regulatory issue that you have. And we also want to make sure that that what we what we offer you as a as an MVP or PMV is is going to you know knock your socks off it's going to be."
+}
+{
+  "name": "David Daniels",
+  "text": "Absolutely clear and compelling for you to to, to partner with us."
+}
+{
+  "name": "David Daniels",
+  "text": "And and the final step I have here is."
+}
+{
+  "name": "David Daniels",
+  "text": "Constructure caustics channel the phase one, which we will articulate and what does that mean? What's the first thing that we're we're going to implement so will take a very, I'll send you these slides."
+}
+{
+  "name": "David Daniels",
+  "text": "I mean the the approach is very pragmatic and very clear and very partnership open."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh."
+}
+{
+  "name": "David Daniels",
+  "text": "And the collaboration together."
+}
+{
+  "name": "David Daniels",
+  "text": "So we we we will do our best to obviously to to come back following this discussion of discovery."
+}
+{
+  "name": "David Daniels",
+  "text": "Makes sense?"
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Sounds good. Yeah, sounds good. I met then Adele. In terms of timelines from our perspective."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Uh, I I know we're already working on anomaly detection on our side. What do you guys see as the window of opportunity to, you know, try something else and and you know, when does that close in terms of what we're trying to achieve?"
+}
+{
+  "name": "Odile Noël",
+  "text": "Yeah, the anomaly detection that we're working on is is on the meter meter data for which we don't really have any."
+}
+{
+  "name": "Odile Noël",
+  "text": "Data equality issues, and this was more on the thermostat data and more detection of quality issues then actual anomalies in peoples homes. So I don't think that would be a conflict between both."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Yep."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "So there's no time bound on on getting back to us in terms of of that MVP."
+}
+{
+  "name": "Odile Noël",
+  "text": "Uhm."
+}
+{
+  "name": "David Daniels",
+  "text": "Good."
+}
+{
+  "name": "Odile Noël",
+  "text": "The."
+}
+{
+  "name": "Odile Noël",
+  "text": "Sooner than later to it to see if we can move forward because also we're we're we're also working on our side you know we have the NTIA working on on data quality. We're trying to find if we can fix some issues with with Stella and and. And so we're moving forward on that side."
+}
+{
+  "name": "Odile Noël",
+  "text": "So if you can, if you can help us before we we find our own solution of course."
+}
+{
+  "name": "Odile Noël",
+  "text": "Yeah."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "So then I guess I'll turn the question around how fast do you guys think you you can do this?"
+}
+{
+  "name": "Odile Noël",
+  "text": "That would be the best."
+}
+{
+  "name": "Odile Noël",
+  "text": "Yeah."
+}
+{
+  "name": "David Daniels",
+  "text": "Yeah, I I think we'll debrief."
+}
+{
+  "name": "David Daniels",
+  "text": "Uh. Within a day and come back to you within a couple of days with a."
+}
+{
+  "name": "David Daniels",
+  "text": "Some some level of of timeline."
+}
+{
+  "name": "David Daniels",
+  "text": "But we we we can move very quick, we're not IBM."
+}
+{
+  "name": "David Daniels",
+  "text": "Uhm, we're, you know, very focused team and you've got all the the key, the key executives from the company here. So I'll, we'll, we'll come back to you very, very quickly with a timeline and and obviously the next steps fast, fast."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Super."
+}
+{
+  "name": "Odile Noël",
+  "text": "K."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "And I thank you for putting all of this together, guys and much appreciated."
+}
+{
+  "name": "David Daniels",
+  "text": "I'm."
+}
+{
+  "name": "David Daniels",
+  "text": "Oh, you're welcome. We wanna again the spirit. Yeah. Yes. The spirit of partnership is what I think. One of the things that's got us excited about this opportunity and I think."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "Welcome, David."
+}
+{
+  "name": "David Daniels",
+  "text": "For us, what was compelling from the last meeting was just knowing that we can help and then it's going to require some work on our end. But we the that we have something here that could be quite exciting and I I'll I'll turn things over to to David Pomo."
+}
+{
+  "name": "David Daniels",
+  "text": "2."
+}
+{
+  "name": "David Daniels",
+  "text": "To talk about the next slides over to you, David."
+}
+{
+  "name": "David Fromont",
+  "text": "What what I could really slow you down, Francisco."
+}
+{
+  "name": "David Fromont",
+  "text": "Users can sign off on stage."
+}
+{
+  "name": "David Fromont",
+  "text": "Just when I go 200."
+}
+{
+  "name": "David Fromont",
+  "text": "My app is curiosity. Mona played soccer like compliance."
+}
+{
+  "name": "David Fromont",
+  "text": "Join button."
+}
+{
+  "name": "David Fromont",
+  "text": "Another time, you know, probably metric double Koo team at now. Do not cootie when you would like."
+}
+{
+  "name": "David Fromont",
+  "text": "What is your marsh?"
+}
+{
+  "name": "David Fromont",
+  "text": "It's gonna be Paulina Poo or the week we see Kia detection automatic."
+}
+{
+  "name": "David Fromont",
+  "text": "Is anybody a pre attributed submit? Mr. Parker says it. Then you would see or know we see Bowman not to keep the that I scientists keep over if it's in Markham pioneer or travel to certain secure."
+}
+{
+  "name": "David Fromont",
+  "text": "We took you equals Jean grow a sketch purpose allowed slides CW David so that people at each of these are not my not booty, Tesler Nokia."
+}
+{
+  "name": "David Fromont",
+  "text": "Uncle testers it then model the transformation."
+}
+{
+  "name": "David Fromont",
+  "text": "Donkey end if you have this script, don't call each this descriptor Python Python, who appear to see Cody on iron."
+}
+{
+  "name": "David Fromont",
+  "text": "Don't just skip lower stood still suited up little, and there may be a mother."
+}
+{
+  "name": "David Fromont",
+  "text": "On Golden Jenny, recalculate this something to meet Danny. A long sustained speed. The skip that for people may eat cheese using simple transformations. Simply complex the the data on real Pascal default password. With that Turkey keeping a parliamentary counsel at this on the wall which we've only transform as young. This process simply message. You suffer and eyes who stays out the transformer."
+}
+{
+  "name": "David Fromont",
+  "text": "Saint Lucie, pH. DO access it would select."
+}
+{
+  "name": "David Fromont",
+  "text": "Don't keep their measure to see the."
+}
+{
+  "name": "David Fromont",
+  "text": "It won't mess up, only fit the the trivial summer weekend, my Dell poo."
+}
+{
+  "name": "David Fromont",
+  "text": "Or the master may we see permit. Did you read me? And my dad don't curse being Buddha the Dell Developper. Problem in Maison metal time adelchi replica software. Longer landmines film. Except it's the set."
+}
+{
+  "name": "David Fromont",
+  "text": "But she learned about Medigene area."
+}
+{
+  "name": "David Fromont",
+  "text": "He went on to say model. Oh, don't it it development model as well."
+}
+{
+  "name": "David Fromont",
+  "text": "Don't kiss her."
+}
+{
+  "name": "David Fromont",
+  "text": "I understood silicona the system until a peanut. Two CQC don't QA QC on horses simplement I script."
+}
+{
+  "name": "David Fromont",
+  "text": "Over marketed WP. So Tesler, Testory teaches you see professional plumbers application. Would like Transformers. And then you don't care. Andrew, 2222 the the Lu ticket as you see."
+}
+{
+  "name": "David Fromont",
+  "text": "Satan Nuzzi present Ma EDT cheesy."
+}
+{
+  "name": "David Fromont",
+  "text": "And any other not only right now, no."
+}
+{
+  "name": "David Fromont",
+  "text": "Took only valued undercoat ac.com."
+}
+{
+  "name": "David Fromont",
+  "text": "Uh, Mr powder?"
+}
+{
+  "name": "David Fromont",
+  "text": "The lack of pain. Now we'll see. We'll cover the the the detection than normally I would keep your Fastenal file or we just ship pretty booked the requirements may acid."
+}
+{
+  "name": "David Fromont",
+  "text": "Yeah. Did you say yes? It would see. Lucky. I can do. Thomas is even amount."
+}
+{
+  "name": "David Fromont",
+  "text": "Although real totally yeah, transformation do data."
+}
+{
+  "name": "David Fromont",
+  "text": "Don't care."
+}
+{
+  "name": "David Fromont",
+  "text": "Coutier City 2 David over."
+}
+{
+  "name": "David Fromont",
+  "text": "Of lucky."
+}
+{
+  "name": "David Fromont",
+  "text": "Golfer gal the having this information comma. No. Uh. Remote poo poo. Fair enough. Yeah, I think."
+}
+{
+  "name": "David Fromont",
+  "text": "It's easier."
+}
+{
+  "name": "David Fromont",
+  "text": "Overtime Jan Motion passes, so it's easier to serve asking for Convient Vicki."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "MM."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Be the from your point of view, where you lacking any information or any prerequisites to."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "And to to to build an MVP? Or is that going to be part of your proposal? What are the success conditions that you guys see?"
+}
+{
+  "name": "David Fromont",
+  "text": "Perhaps some Mike and Piotr can answer for this question on the more technical aspects of."
+}
+{
+  "name": "David Fromont",
+  "text": "Do we need to do we need more information?"
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Well, I mean."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "If you don't have the answer alive, I'm not looking for it live, but I'm just, you know, trying to figure in that proposal. Or are you proposing to also list what you guys see as the the SuccessFactors, the prerequisites or would that come in a later phase?"
+}
+{
+  "name": "Mike McDonald",
+  "text": "Yeah."
+}
+{
+  "name": "Mike McDonald",
+  "text": "Yeah, I think so. From my perspective, the proposal itself were gonna we wanna iterate it on it with you because you guys are going to help define what is in that MVP and what are what those success success conditions look like for you. And so you know in terms of our proposal, I see that as you know a draft that we iterate on together until we we nailed down to what we nail down what that MVP looks like."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "K."
+}
+{
+  "name": "David Fromont",
+  "text": "David, is it possible? Uh, as a first step to to work with some?"
+}
+{
+  "name": "David Fromont",
+  "text": "And two, is it possible to get a set up data and to try it we've are told to just to be sure we are able to to detect anomalies and we we before to go too far and to try to."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Yeah, we can't anonymize a set of data and and and send it to you guys."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Is no problem."
+}
+{
+  "name": "David Daniels",
+  "text": "That's good."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "It's it's more we we can't, you know, we can't go over a certain threshold of sending data."
+}
+{
+  "name": "David Fromont",
+  "text": "Thank you."
+}
+{
+  "name": "David Fromont",
+  "text": "Yeah."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Overseas, but for small subsets it's not an issue."
+}
+{
+  "name": "David Fromont",
+  "text": "Yeah, pros. Perhaps we can start with that. Used to be able, we are able to to detect anomalies and to work together reason before to go too far because I actually, I think if we want to integrate the OR our solution will do it for sure. But it will take perhaps too much time at the beginning. So if we we want to get quick results and and try the there are technology yeah if we can have a small set of data it could be a good start."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Yeah."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "For."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Sure. And we're we're all about iterating right for or a small, nimble company as well. And our goal is not to do things the."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "2."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "I don't know which company you were talking about. The David earlier IBM or whatever. That that's not our approach at all. So let's stay flexible and and play around."
+}
+{
+  "name": "David Fromont",
+  "text": "Idea."
+}
+{
+  "name": "David Daniels",
+  "text": "Yeah."
+}
+{
+  "name": "David Daniels",
+  "text": "OK, I I really like this. Yeah, sorry. Go ahead."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "Yeah. So."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "And as far so yeah, so David, yeah. And and the rest of the team and Hilo, what I I think we're going to just summarize with this proposal what our understanding is for that, you know minimal viable product that really addresses the most important priority that you have."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "Once we make sure that with you that everything is within, you know, within the confines of what we clearly understand what this product needs to do."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "And will be able to."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "Further confirm the success based on data."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "I I think will be. I think that'll be it, that that'll be from that point on, you know it's."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Then there's only money to talk about at that point, but which is? Which is the easy part, right?"
+}
+{
+  "name": "Frank Carzoli",
+  "text": "Exactly. We just got, we just gotta."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "Yeah, that that you know David itching for this conversation."
+}
+{
+  "name": "David Daniels",
+  "text": "Yeah, both both of us. But uh, again, the spirit of partnership I think is Full disclosure is you're involved all every step of the way."
+}
+{
+  "name": "David Daniels",
+  "text": "OK. And and we're we're committed."
+}
+{
+  "name": "David Daniels",
+  "text": "And should we have any questions, I imagine I can reach out to Ahmed or Adele and and you'll hear back in a couple of days with a preliminary here. Here's, here's what we're going to do. Here is our our timeline for producing proposal and will do it forthwith."
+}
+{
+  "name": "David Daniels",
+  "text": "And and then we can have further discussions like you said."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Perfect. Sounds good."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "And then I mean time, if any question creeps up on your end that you probably didn't ask, just your direct it to David and what will get an answer for it for sure."
+}
+{
+  "name": "David Daniels",
+  "text": "Yeah."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Sure, yeah, let's iterate. Sounds good."
+}
+{
+  "name": "David Daniels",
+  "text": "Thank you guys for your investment in this time with us. Appreciate it. It's worth, it's worth measuring twice, cutting once. So thank you."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Awesome. Thank you."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "Your shirt, your time, everyone."
+}
+{
+  "name": "Ahmed Abdellatif",
+  "text": "You."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Thank you as well."
+}
+{
+  "name": "David Saint-Germain",
+  "text": "Take care, guys. Cheers. Thanks."
+}
+{
+  "name": "David Fromont",
+  "text": "Thank you."
+}
+{
+  "name": "David Daniels",
+  "text": "Bye bye bye."
+}
+{
+  "name": "Frank Carzoli",
+  "text": "Thanks. Take care. Bye. Bye everybody."
+}
+{
+  "name": "David Daniels",
+  "text": "Hi."
+}
+{
+  "name": "Piotr Stepinski",
+  "text": "Hey, babe."
+}
+{
+  "name": "Mike McDonald",
+  "text": "Bye bye."
+}

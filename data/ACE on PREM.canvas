@@ -1,0 +1,37 @@
+{
+	"nodes":[
+		{"id":"608eb5491be10f0c","x":-960,"y":520,"width":665,"height":120,"type":"text","text":"OP US 2\nAs Claude I'd like to be able to run online predictions and to be informed through email that something bad is happening"},
+		{"id":"7e5be0c8b9c924de","x":-216,"y":431,"width":385,"height":89,"type":"text","text":"we need to be able to expose Kafka for easy data ingestion ( API)"},
+		{"id":"4baec516f0f39bfe","x":-760,"y":-560,"width":220,"height":220,"type":"text","text":"how to maintain this software?\nIt looks like this thing is already addressed here [[release management]]\n"},
+		{"id":"7ac7a3d646cf3938","x":-480,"y":-340,"width":250,"height":60,"type":"text","text":"Define Minimal ACE? "},
+		{"id":"c18249403a454412","x":-140,"y":-250,"width":250,"height":60,"type":"text","text":"detach tesler script from cassandra"},
+		{"id":"8d43b643eeb40a3a","x":-1040,"y":-250,"width":420,"height":350,"type":"text","text":"[[POC docerized ACE]] version of minimal \nACE\n[kafka docker](https://www.youtube.com/watch?v=n_vvgc47rWM)\nTODO the rest of services and put them together\n"},
+		{"id":"995c1dd982a98061","x":-420,"y":-500,"width":250,"height":110,"type":"text","text":"Define problem to solve once we have definition of ACE on PREM"},
+		{"id":"c685d6273684cbcf","x":-180,"y":-740,"width":250,"height":100,"type":"text","text":"What we shall do with Kafka dependency?"},
+		{"id":"7ddd59fed96a1bf8","x":-687,"y":-886,"width":332,"height":146,"type":"text","text":"PROS:\n- kafka as online mechanism\n- Kafka to shedule jobs\n- Kafka for data ingestion?"},
+		{"id":"fef7b6a07aef1179","x":-230,"y":-960,"width":272,"height":179,"type":"text","text":"CONS:\n- scalability\n- client has own solution\n- maintainability"},
+		{"id":"e532d291eff1cc9e","x":-480,"y":-130,"width":440,"height":290,"type":"text","text":"IF current Tesler architecture is ACE on PREM:\n- Tesler service\n- SCONFIG\n- DataService\n- TeslerUI\n- Kafka\n- Cassandra\n- Postgres\n- NFS"},
+		{"id":"f1cba7792c19dad8","x":-1040,"y":-915,"width":271,"height":175,"type":"text","text":"TODO check out OSDU data platform: it looks like an opportunity to get to energy world. what is https://osduforum.org/osdu-edge/create-and-test-edge-to-cloud-system-in-edge-lab/"},
+		{"id":"41a7146fe11711d1","x":-15,"y":-560,"width":250,"height":141,"type":"text","text":"storage\nhttps://openebs.io/\nhttps://rook.io/"},
+		{"id":"67814f2b6d50eedc","x":-1005,"y":200,"width":710,"height":188,"type":"text","text":"onPrem US 1:\nAs Claude the eng I'd like to be able to easily deploy Qaqc model against our internal dataset. We are offline on our own bare metal deployments. I cannot share my data trhought internet and need to keep it or in my DB or share localy through CSV. I'd like to be able to understand that something anomalous happens with my infrastructure to save money on unneeded interventions"},
+		{"id":"d88751e6c4830eb1","x":-216,"y":241,"width":320,"height":106,"type":"text","text":"we need to plan the interface between Tesler and other storage than Cassandra "},
+		{"id":"21426dcc9e316a5e","x":-1398,"y":-655,"width":263,"height":310,"type":"link","url":"https://www.replicated.com/blog/why-replicated-has-moved-away-from-recommending-longhorn-for-kurl-storage"}
+	],
+	"edges":[
+		{"id":"75da3ee718cd0d0e","fromNode":"7ac7a3d646cf3938","fromSide":"bottom","toNode":"8d43b643eeb40a3a","toSide":"right"},
+		{"id":"11a0dbddbae05616","fromNode":"995c1dd982a98061","fromSide":"left","toNode":"4baec516f0f39bfe","toSide":"right"},
+		{"id":"b526d7a42cbf80c4","fromNode":"995c1dd982a98061","fromSide":"right","toNode":"c18249403a454412","toSide":"left"},
+		{"id":"57a6200cc92c10af","fromNode":"995c1dd982a98061","fromSide":"top","toNode":"c685d6273684cbcf","toSide":"bottom"},
+		{"id":"fc7f505a2bc5b142","fromNode":"7ddd59fed96a1bf8","fromSide":"right","toNode":"c685d6273684cbcf","toSide":"left"},
+		{"id":"17e9e87a30ca8dfa","fromNode":"fef7b6a07aef1179","fromSide":"bottom","toNode":"c685d6273684cbcf","toSide":"top"},
+		{"id":"113d70488765b01b","fromNode":"7ac7a3d646cf3938","fromSide":"top","toNode":"995c1dd982a98061","toSide":"bottom"},
+		{"id":"a0be26c0df22950c","fromNode":"e532d291eff1cc9e","fromSide":"bottom","toNode":"67814f2b6d50eedc","toSide":"top"},
+		{"id":"9234da6880a65609","fromNode":"e532d291eff1cc9e","fromSide":"bottom","toNode":"608eb5491be10f0c","toSide":"top"},
+		{"id":"dff4c653f3d7bf11","fromNode":"7ac7a3d646cf3938","fromSide":"bottom","toNode":"e532d291eff1cc9e","toSide":"top"},
+		{"id":"7a68b4539fb758c2","fromNode":"67814f2b6d50eedc","fromSide":"right","toNode":"d88751e6c4830eb1","toSide":"left"},
+		{"id":"af87e6672cd8835b","fromNode":"608eb5491be10f0c","fromSide":"right","toNode":"7e5be0c8b9c924de","toSide":"left"},
+		{"id":"d2c710d3c12cdf7f","fromNode":"995c1dd982a98061","fromSide":"top","toNode":"f1cba7792c19dad8","toSide":"bottom"},
+		{"id":"375c99b362cac1f0","fromNode":"7ac7a3d646cf3938","fromSide":"right","toNode":"41a7146fe11711d1","toSide":"left"},
+		{"id":"32e580cc8bb96e5a","fromNode":"21426dcc9e316a5e","fromSide":"top","toNode":"995c1dd982a98061","toSide":"right"}
+	]
+}

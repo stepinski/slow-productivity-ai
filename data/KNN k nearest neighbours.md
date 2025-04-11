@@ -1,0 +1,3 @@
+- unsupervised classification for anomaly detection
+- we try to find a decision boundary between normal observations and anomalous based on distance from nearest neighbour - it's a treshold 
+- if you are far from nearest neighbour you're probably an anomaly

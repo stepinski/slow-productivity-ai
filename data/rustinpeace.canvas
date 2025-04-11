@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"type":"text","text":"pola.rs \nowiniecie w Julii - wrapper jako konkurencja do DataFrames.jl","id":"d81c0d5848f106bc","x":-125,"y":-30,"width":405,"height":110},
+		{"type":"text","text":"create serie.rs - series like in pandas but in rust ( datetime index) which are based on pola.rs","id":"5dce8c84c17a7165","x":-361,"y":173,"width":250,"height":167},
+		{"type":"text","text":"julia-rs\nnew org where I create those 2 project plus something like sktime but in rust\nin a 1st place sktime wrapper in Rust?\nmaybe other staff later","id":"f428aed769774784","x":155,"y":227,"width":365,"height":193},
+		{"type":"text","text":"check what about Prophet","id":"d7715281941bdfec","x":-125,"y":451,"width":250,"height":60},
+		{"type":"text","text":"first chpater of games in rust","id":"815d82600b4632a1","x":-149,"y":583,"width":304,"height":57},
+		{"type":"text","text":"rust book with quizes\nhttps://rust-book.cs.brown.edu/experiment-intro.html","id":"7ee0ca528307748f","x":-78,"y":713,"width":358,"height":127},
+		{"id":"0eb8a72b17caa290","x":-340,"y":-260,"width":280,"height":200,"type":"text","text":"julia rust interaction\nhttps://github.com/felipenoris/JuliaPackageWithRustDep.jl"},
+		{"id":"4ac9abc68927b826","x":120,"y":-360,"width":340,"height":200,"type":"link","url":"https://github.com/carldata/timeseries-rust/blob/master/src/timeseries.rs"},
+		{"id":"d775cd91b068ede7","x":-400,"y":-400,"width":322,"height":99,"type":"text","text":"why bkamins is ok for this:\nhttps://discourse.julialang.org/t/pola-rs-vs-dataframes-jl/95090"},
+		{"id":"7b64cb210918dff2","x":-880,"y":-200,"width":400,"height":400,"type":"link","url":"https://www.pola.rs/"},
+		{"id":"236a0baf922a49b7","x":-1000,"y":-701,"width":400,"height":400,"type":"link","url":"https://steveklabnik.com/writing/rusts-golden-rule"},
+		{"id":"ac65a3b023d339b1","x":-500,"y":-860,"width":400,"height":400,"type":"link","url":"https://matklad.github.io/2023/03/28/rust-is-a-scalable-language.html"},
+		{"id":"93119c986710c688","x":-1040,"y":-1240,"width":400,"height":400,"type":"link","url":"https://rogueliketutorials.com/tutorials/tcod/v2/part-1/"},
+		{"id":"cb70dfdbe2135c28","x":-480,"y":-1320,"width":400,"height":400,"type":"link","url":"https://bfnightly.bracketproductions.com/rustbook/chapter_2.html"}
+	],
+	"edges":[
+		{"id":"e5fb962cd04d335d","fromNode":"d81c0d5848f106bc","fromSide":"bottom","toNode":"5dce8c84c17a7165","toSide":"right"},
+		{"id":"61b39ee8a50517c9","fromNode":"5dce8c84c17a7165","fromSide":"right","toNode":"f428aed769774784","toSide":"left"}
+	]
+}

@@ -1,0 +1,6 @@
+- xh post https://fake-coffee-api.vercel.app/api name=devopsman
+- curlie - similar 
+- kulala - predefined requests from neovim
+- posting - postman but better in terminal
+- nushell - its perfect - everything is data in my terminal
+- cobra.dev - tool to build best cli tools in golang

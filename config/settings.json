@@ -1,0 +1,6 @@
+{
+  "obsidian_vault_path": "/Users/unman/ws/slow-productivity-ai/data",
+  "llm_model": "llama3:8b",
+  "llm_url": "http://localhost:11434",
+  "index_dir": "./indices/obsidian_index"
+}

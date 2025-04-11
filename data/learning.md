@@ -1,0 +1,2 @@
+- dataquest https://app.dataquest.io/payment -> shall i buy lifetime?
+- [https://www.boot.dev/signup-flow](https://www.boot.dev/tracks/backend)

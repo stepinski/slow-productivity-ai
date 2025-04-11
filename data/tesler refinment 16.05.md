@@ -1,0 +1,3 @@
+- tesler testy - kilka widokow zrobione / brak krytycznych bugow
+- kafka clients w najnowszej wersji - bledy podobne jak na forum - kolejna wersja kafki to naprawila ... - update wszystkiego co korzysta z kafki
+- 

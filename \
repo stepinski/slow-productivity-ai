@@ -1,0 +1,53 @@
+# scripts/build_index.py
+import json
+import os
+import sys
+# from llama_index import VectorStoreIndex, SimpleDirectoryReader, ServiceContext
+from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
+# from llama_index.llms import Ollama
+
+from llama_index.llms.ollama import Ollama
+from llama_index.core import Settings
+from llama_index.embeddings.ollama import OllamaEmbedding
+
+# Load config
+with open("config/settings.json", "r") as f:
+    config = json.load(f)
+
+embed_model = OllamaEmbedding(model=config["llm_model"], url=config["llm_url"])  # Replace with your model
+Settings.embed_model = embed_model  # Set the embedding model
+
+OBSIDIAN_PATH = config["obsidian_vault_path"]
+INDEX_DIR = config["index_dir"]
+
+def create_index():
+    print("Building index from Obsidian vault...")
+    # Check if Obsidian path exists
+    if not os.path.exists(OBSIDIAN_PATH):
+        print(f"Error: Obsidian vault path {OBSIDIAN_PATH} does not exist")
+        sys.exit(1)
+        
+    # Load documents from Obsidian vault
+    documents = SimpleDirectoryReader(OBSIDIAN_PATH, recursive=True).load_data()
+    print(f"Loaded {len(documents)} documents")
+    
+    # Connect to Ollama
+    llm = Ollama(model=config["llm_model"], url=config["llm_url"])
+    
+    Settings.llm = llm
+    # Create service context
+    # service_context = ServiceContext.from_defaults(llm=llm)
+    
+    # Create and save index
+    index = VectorStoreIndex.from_documents(documents)
+    
+    # Create directory if it doesn't exist
+    os.makedirs(os.path.dirname(INDEX_DIR), exist_ok=True)
+    
+    # Save index
+    index.storage_context.persist(INDEX_DIR)
+    print(f"Index created successfully at {INDEX_DIR}")
+    return index
+
+if __name__ == "__main__":
+    create_index()

@@ -1,0 +1,1 @@
+calculates outlier score based on distance from cluster center multiplied by number of instances belonging to this cluster

@@ -1,0 +1,8 @@
+- [ ] fix money 
+- [ ] prepare presentation for what is still opened in terms of conferences
+- [ ] new project idea - lead lag - go deeply into this model and think about rewriting it to rust + rust in python
+- [ ] new speach idea: forecasting topology - using financial forecasting method for industrial ts data - deeper rust introduction the journey to open soruce in rust
+- [ ] fix my planning ( different than I do now)
+- [ ] fix the accounting stuff -> complete invoices and stuff
+- [ ] package this code into python pip library as well
+- [ ] python example that shows how topology finder works

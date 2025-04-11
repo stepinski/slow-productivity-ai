@@ -1,0 +1,3 @@
+- Toronto - backend service that mixes toghether forecast results with gis layer
+	- improve backend model - compare 2 versions and select better one
+- montreal - EDA, data aquisition, first models :  what is our timeline here?
