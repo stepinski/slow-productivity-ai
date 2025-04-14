@@ -1,0 +1,1611 @@
+
+id like to start implementing local productivity setup. i run macos. i want to have an automation pipeline on n8n. i want to use opensource llm best for my use case. i want ot have rag on my obsidian notes vault. i want to be able to run opensource llm and prompt it to create custom project note - with summary of current active projects and unfinished tasks
+
+I'd be happy to help you set up a local productivity system with the components you mentioned. Here's a plan to implement this on macOS:
+
+Local Productivity System Overview
+Your system will have these key components:
+
+n8n for automation workflows
+A local open-source LLM for AI capabilities
+RAG integration with your Obsidian vault
+A system to generate project summaries and task lists
+Let's break down the implementation:
+
+1. n8n Setup
+First, install n8n on your Mac:
+
+bash
+# Using npm
+npm install n8n -g
+# OR using Docker
+docker pull n8nio/n8n
+To run n8n:
+
+bash
+# If installed via npm
+n8n start
+# OR via Docker
+docker run -it --rm --name n8n -p 5678:5678 n8nio/n8n
+You'll access the n8n interface at http://localhost:5678
+
+2. Open-Source LLM Selection
+For your use case (productivity, note summarization, task management), I recommend:
+
+Llama 3 8B or 70B: Great balance of performance and resource requirements
+Mistral 7B: Efficient choice with good summarization capabilities
+Phi-3 mini: Good for lightweight installations
+To run these locally, you'll need:
+
+LM Studio (very user-friendly)
+Ollama (lightweight, command-line focused)
+Install Ollama:
+
+bash
+curl -fsSL https://ollama.com/install.sh | sh
+Pull a model:
+
+bash
+ollama pull llama3
+3. RAG for Obsidian
+To implement RAG with your Obsidian vault:
+
+Install LlamaIndex or LangChain
+bash
+pip install llama-index langchain
+Create a script to index your Obsidian vault:
+python
+from llama_index import VectorStoreIndex, SimpleDirectoryReader
+import os
+
+# Path to your Obsidian vault
+OBSIDIAN_PATH = "/path/to/your/obsidian/vault"
+
+# Load documents
+documents = SimpleDirectoryReader(OBSIDIAN_PATH, recursive=True).load_data()
+
+# Create index
+index = VectorStoreIndex.from_documents(documents)
+
+# Save index
+index.storage_context.persist("./obsidian_index")
+4. Project Summary Generator
+The final piece will be your n8n workflow that:
+
+Triggers on schedule or demand
+Queries your Obsidian vault via RAG
+Prompts the LLM to create a summary
+Here's a sample script to connect everything:
+
+python
+from llama_index import StorageContext, load_index_from_storage
+from llama_index.llms import Ollama
+
+# Load your saved index
+storage_context = StorageContext.from_defaults(persist_dir="./obsidian_index")
+index = load_index_from_storage(storage_context)
+
+# Connect to local LLM
+llm = Ollama(model="llama3")
+
+# Create query engine
+query_engine = index.as_query_engine(llm=llm)
+
+# Generate project summary
+response = query_engine.query(
+    "Create a summary of my current active projects and unfinished tasks. " +
+    "Format it as a markdown document with sections for each project and bullet points for tasks."
+)
+
+# Save the response
+with open("project_summary.md", "w") as f:
+    f.write(str(response))
+Integration Steps
+First implementation: Set up Ollama and a basic RAG system
+Create n8n workflows: Build automation that calls your script
+Regular updates: Schedule the workflow to run daily/weekly
+Refine: Improve prompts based on results
+Would you like me to elaborate on any specific part of this setup? For example, I could share more detailed n8n workflow configurations or help optimize the LLM choice for your specific hardware.
+
+i want to use the same llm for all my n8n pipelines, prompting in terminal with tobbyml and as copilot in my lazyvim - i want to share the same context - so the same state of llm after prompting in terminal is used for rag and copilot
+
+This is a great use case for maintaining a consistent LLM state across different interfaces. You'll want to set up a central LLM service that all your tools can connect to. Let me outline how to implement this:
+
+Centralized LLM Setup with Shared Context
+The key here is to run a single LLM instance as a service that your n8n workflows, terminal (tobbyml), and LazyVim copilot can all connect to, ensuring they share the same context and state.
+
+1. Model Server with Shared State
+I recommend using ollama as your central service since it:
+
+Maintains state between queries
+Provides a simple API interface
+Has good performance on Mac
+Can be easily connected to multiple clients
+Here's how to set it up:
+
+bash
+# Install ollama
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Pull a model that works well for coding and productivity
+# Choose one based on your Mac's specifications:
+ollama pull codellama:7b         # Good balance for M1/M2 Macs
+# OR
+ollama pull llama3:8b            # Good general purpose
+# OR 
+ollama pull mistral:7b-instruct  # Efficient instruction following
+2. Run Ollama as a Service
+bash
+# Start ollama as a service (it runs on localhost:11434 by default)
+ollama serve
+3. Connect Tobby ML to Ollama
+For terminal use with tobbyml:
+
+bash
+# Install tobby
+pip install tobbyml
+
+# Configure tobby to use your ollama endpoint
+# Create a tobby config file if it doesn't exist
+mkdir -p ~/.config/tobby
+echo 'model_server: "http://localhost:11434"' > ~/.config/tobby/config.yaml
+echo 'model: "codellama:7b"' >> ~/.config/tobby/config.yaml
+4. LazyVim Copilot Setup
+For LazyVim, you can use copilot.lua with ollama:
+
+Add this to your LazyVim config:
+lua
+return {
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+        server_opts_overrides = {
+          -- Connect to your local Ollama instance
+          inlineSuggestCount = 3,
+          alternative_lsp = {
+            type = "ollama",
+            url = "http://localhost:11434",
+            model = "codellama:7b", -- Use the same model as tobby
+          }
+        }
+      })
+    end,
+  }
+}
+5. n8n Integration with Ollama
+Create a workflow in n8n that connects to the same Ollama instance:
+
+Use the "HTTP Request" node to connect to Ollama's API:
+Method: POST
+URL: http://localhost:11434/api/generate
+Body (JSON):
+json
+{
+  "model": "codellama:7b",
+  "prompt": "{{$input.prompt}}",
+  "stream": false
+}
+Create a workflow for your RAG system:
+
+n8n RAG Workflow Code
+Code 
+6. Tying Everything Together
+The critical advantage of this setup is that all tools share the same LLM instance:
+
+If you reference a project in the terminal with tobbyml, the LLM retains that context
+When LazyVim copilot suggests code, it has awareness of what you've discussed
+Your n8n workflows can continue the same contextual thread
+For optimal results, configure your Ollama instance to maintain longer context:
+
+bash
+# Start ollama with increased context window
+OLLAMA_HOST=localhost:11434 OLLAMA_KEEP_ALIVE=1h ollama serve
+Would you like me to provide more specific implementation details for any part of this setup? For example, I could help with optimizing Ollama's parameters for better performance on your Mac or developing more sophisticated RAG queries for your Obsidian vault.
+
+i dont see rag llamaindex in this setup
+
+You're absolutely right - I didn't include the LlamaIndex RAG integration properly in the centralized setup. Let me correct this with a more complete architecture that incorporates LlamaIndex for proper RAG on your Obsidian vault.
+
+Improved Centralized Setup with LlamaIndex RAG
+Here's the revised architecture that ensures all components share the same LLM instance:
+
+1. Ollama as Central LLM Service (same as before)
+bash
+# Install and run Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+ollama pull codellama:7b  # or your preferred model
+ollama serve
+2. LlamaIndex RAG for Obsidian
+First, install LlamaIndex with the Ollama integration:
+
+bash
+pip install llama-index langchain pymupdf pypdf
+pip install llama-index-llms-ollama
+Now create a script to build and query your RAG index:
+
+python
+from llama_index import VectorStoreIndex, SimpleDirectoryReader, ServiceContext
+from llama_index.llms import Ollama
+import os
+
+# Path to your Obsidian vault
+OBSIDIAN_PATH = "/path/to/your/obsidian/vault"
+
+def create_index():
+    # Load documents from Obsidian vault
+    documents = SimpleDirectoryReader(OBSIDIAN_PATH, recursive=True).load_data()
+    
+    # Connect to your running Ollama instance
+    llm = Ollama(model="codellama:7b", url="http://localhost:11434")
+    
+    # Create service context with the Ollama LLM
+    service_context = ServiceContext.from_defaults(llm=llm)
+    
+    # Create and save index
+    index = VectorStoreIndex.from_documents(
+        documents, 
+        service_context=service_context
+    )
+    
+    # Save index
+    index.storage_context.persist("./obsidian_index")
+    return index
+
+def query_index(query_text):
+    # Load your saved index
+    from llama_index import StorageContext, load_index_from_storage
+    
+    # Connect to Ollama
+    llm = Ollama(model="codellama:7b", url="http://localhost:11434")
+    service_context = ServiceContext.from_defaults(llm=llm)
+    
+    # Load index with the same LLM
+    storage_context = StorageContext.from_defaults(persist_dir="./obsidian_index")
+    index = load_index_from_storage(storage_context, service_context=service_context)
+    
+    # Create query engine
+    query_engine = index.as_query_engine()
+    
+    # Query
+    response = query_engine.query(query_text)
+    return str(response)
+
+if __name__ == "__main__":
+    # Create index if it doesn't exist
+    if not os.path.exists("./obsidian_index"):
+        create_index()
+    
+    # Example query
+    result = query_index("Summarize my current projects and tasks")
+    print(result)
+3. n8n Integration with LlamaIndex RAG
+Now, let's create a proper n8n workflow that uses this LlamaIndex setup:
+
+Install the n8n Python package to create a custom node:
+bash
+npm install n8n-python
+Create a custom n8n node that calls your RAG script:
+
+n8n LlamaIndex RAG Integration
+Code 
+Modify your Python script to accept command-line arguments:
+
+LlamaIndex RAG Script with CLI Support
+Code 
+4. Create a Project Summary Generator Script
+Here's a script that combines the RAG system with a project summary generator:
+
+
+Project Summary Generator Script
+Code 
+5. Complete Integration
+Now let's tie everything together to ensure all components share the same LLM context:
+
+Create a startup script:
+
+Productivity System Startup Script
+Code 
+Set up tobbyml to use the same Ollama instance:
+Create a ~/.config/tobby/config.yaml file:
+
+yaml
+model_server: "http://localhost:11434"
+model: "codellama:7b"
+Configure LazyVim's copilot plugin to use the same Ollama instance as described earlier.
+6. Create an n8n Workflow for Project Summary Generation
+In n8n, create a scheduled workflow:
+
+Schedule Trigger - Set to run daily or on demand
+Execute Command - Run the project summary script
+Send Outputs - Options to:
+Save to your Obsidian vault
+Send via email
+Display in a dashboard
+Final Integration Points
+This architecture now properly integrates:
+
+Single Ollama LLM instance shared by all components
+LlamaIndex RAG properly indexing your Obsidian vault
+n8n workflows that leverage both components
+Terminal access via tobbyml connected to the same LLM
+Editor integration with LazyVim using the shared LLM
+The key advantage is that context is maintained across all interfaces. For example, if you discuss a project in your terminal, that context is available when you create a summary through n8n or when using copilot features in LazyVim.
+
+Would you like me to provide more specific details on any part of this setup? For example, I could help with optimizing the LlamaIndex configuration for better performance with your Obsidian vault.
+
+i want my eperience with llm as near to what i have with claudeai as possible - in the same time i want it free and light fast - what llm i shall use than?
+
+To get an experience similar to Claude AI while keeping it free, local, and fast, you'll want to carefully choose your local LLM. Here are the best options for a Claude-like experience while maintaining performance:
+
+Best Local LLMs for Claude-like Experience
+Mistral 7B Instruct - Excellent balance of speed and quality
+Great at following instructions
+Reasonable on M1/M2 Macs
+Needs about 8GB of RAM
+Llama 3 8B - Very well-rounded performer
+Good reasoning abilities
+Decent context understanding
+Similar "feel" to Claude in conversation
+Runs smoothly on modern Macs
+Phi-3 Mini - If speed is critical
+Surprisingly capable for its size
+Very fast responses
+Lower resource requirements
+Good at coding tasks
+Gemma 7B - Worth considering
+Clean responses
+Good instruction following
+Works well with RAG systems
+Recommended Setup for Best Claude-like Experience
+I'd recommend this configuration:
+
+bash
+# Install Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Pull Llama 3 8B - best balance of Claude-like quality and speed
+ollama pull llama3:8b
+
+# OR if you need even faster responses with slightly lower quality
+ollama pull mistral
+Then optimize the Ollama configuration for better performance:
+
+bash
+# Run with increased context and performance settings
+OLLAMA_HOST=localhost:11434 OLLAMA_KEEP_ALIVE=5h ollama serve
+For your workflow integrations (n8n, LazyVim, terminal), use these models with the RAG setup described earlier, and you'll get the closest experience to Claude while keeping everything free, local, and reasonably fast.
+
+The main trade-offs to be aware of:
+
+Local models will have shorter context windows than Claude
+Response quality won't be quite at Claude's level
+You'll need to handle more prompt engineering yourself
+Would you like me to provide more specific optimization techniques for your selected model to get even closer to the Claude experience?
+
+yes, help me - im not good in prompting
+
+I'd be happy to help improve your prompting for local LLMs to get a more Claude-like experience. Good prompting can significantly enhance local model performance.
+
+Prompting Techniques for Local LLMs
+1. System Prompts for Local Models
+Create a system prompt file (system_prompt.txt) to use with all your tools:
+
+You are a helpful, accurate, and friendly AI assistant similar to Claude. You think step-by-step before answering. You prioritize being helpful while maintaining accuracy. When you're uncertain, acknowledge your limitations. Respond in a conversational, thoughtful manner.
+
+When helping with tasks:
+1. Break down complex problems into steps
+2. Provide clear explanations for your reasoning
+3. If coding, include comments to explain your approach
+4. Focus on providing practical solutions
+
+Always maintain context from our conversation. If I refer to something we discussed earlier, use that information in your response.
+2. Task-Specific Prompt Templates
+Here are templates for different tasks with your local LLM:
+
+For Summarizing Projects (n8n workflow):
+I need a summary of my current projects.
+
+Use these guidelines:
+1. Review the context provided from my notes
+2. List active projects with 1-2 sentence descriptions
+3. For each project, identify 3-5 key unfinished tasks
+4. Highlight any approaching deadlines
+5. Format as a clean markdown document with clear sections
+
+Context from my notes:
+{context}
+For Code Assistance (LazyVim):
+As a coding assistant, help me with the following task:
+
+Project context: {project_description}
+Current file: {filename}
+Task: {coding_task}
+
+Please provide code that is:
+- Well-commented
+- Following best practices for {language}
+- Easy to understand and maintain
+
+Think step-by-step about the solution before providing code.
+For RAG Queries:
+I'm looking for information from my notes.
+
+Query: {query}
+
+When answering:
+1. Focus only on information found in my notes
+2. If multiple notes contain relevant information, synthesize them
+3. If information seems incomplete, note what might be missing
+4. Format your response in a clean, readable way
+
+Notes context:
+{note_context}
+3. Implementation in Your Tools
+For n8n workflows:
+
+n8n Prompt Helper Function
+Code 
+For terminal use with tobbyml:
+Create a set of prompt shortcuts in a file ~/.config/tobby/prompts.yaml:
+
+yaml
+prompts:
+  summarize: |
+    Summarize the following information concisely:
+    
+    {input}
+  
+  explain_code: |
+    Explain what the following code does in simple terms:
+    
+    {input}
+  
+  improve_code: |
+    Review the following code and suggest improvements for readability and efficiency:
+    
+    {input}
+  
+  brainstorm: |
+    Help me brainstorm ideas about:
+    
+    {input}
+    
+    Generate 5-7 creative possibilities with brief explanations.
+4. Chain-of-Thought Techniques
+Local LLMs perform better with chain-of-thought prompting. Add these elements to your prompts:
+
+When responding to this request:
+1. First, think about what information you need to address the question
+2. Second, analyze the key aspects of the problem
+3. Third, develop your answer step by step
+4. Finally, summarize your conclusion clearly
+
+This helps me understand your reasoning process.
+5. Optimization for RAG
+For RAG queries with LlamaIndex, improve results with this approach:
+
+
+Optimized RAG Query Function
+Code 
+6. Making Your LLM More "Claude-like"
+To make your local LLM respond more like Claude:
+
+Instruct it to be thoughtful and nuanced:
+When answering, consider multiple perspectives and provide nuanced responses rather than simplistic answers. Acknowledge complexity where it exists.
+Encourage helpful behaviors:
+If my request isn't clear, ask clarifying questions before proceeding. If I request something you can't do well, suggest a better approach.
+For coding tasks:
+When writing code, follow these principles:
+- Write clean, well-structured code
+- Include detailed comments explaining your approach
+- Break complex functions into smaller, manageable pieces
+- Consider edge cases and error handling
+Practical Example: Project Summary Workflow
+Here's a complete example of how to generate a project summary with Claude-like responses:
+
+
+Claude-like Project Summary Script
+Code 
+Would you like me to focus on any specific aspect of prompting or provide additional templates for other use cases in your productivity system?
+
+im starting from the initial setp - shall i run those things in conda env?
+
+Starting from the beginning with a clean setup is a good approach. Using a conda environment is an excellent choice for managing your Python dependencies without affecting your system. Here's how to set up your entire productivity system from scratch using conda:
+
+Initial Setup with Conda
+First, install Miniconda if you don't have it already:
+bash
+# Download the installer
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.pkg  # For M1/M2 Macs
+# Or for Intel Macs
+# curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.pkg
+
+# Install it
+sudo installer -pkg Miniconda3-latest-MacOSX-arm64.pkg -target /
+Create a dedicated conda environment:
+bash
+# Create a new environment
+conda create -n productivity python=3.10
+
+# Activate it
+conda activate productivity
+Install the necessary Python packages:
+bash
+# Basic packages
+conda install -c conda-forge pip numpy pandas
+
+# Install LlamaIndex and other needed packages
+pip install llama-index pymupdf pypdf
+pip install llama-index-llms-ollama
+pip install langchain
+Install Ollama
+Ollama needs to be installed at the system level (not in the conda environment):
+
+bash
+curl -fsSL https://ollama.com/install.sh | sh
+Then pull your chosen model:
+
+bash
+# Pull Llama 3 8B - good balance of performance and quality
+ollama pull llama3:8b
+Setup n8n
+For n8n, you can use npm or Docker. Here's the npm approach:
+
+bash
+# Install n8n globally
+npm install n8n -g
+
+# Start n8n
+n8n start
+Create Your Project Directory Structure
+bash
+# Create project directory
+mkdir -p ~/llm_productivity
+cd ~/llm_productivity
+
+# Create subdirectories
+mkdir -p scripts config data indices
+Create Configuration Files
+Create a basic configuration file:
+
+bash
+# In the config directory
+cat > config/settings.json << EOL
+{
+  "obsidian_vault_path": "/path/to/your/obsidian/vault",
+  "llm_model": "llama3:8b",
+  "llm_url": "http://localhost:11434",
+  "index_dir": "./indices/obsidian_index"
+}
+EOL
+Create a Basic RAG Script
+bash
+# In the scripts directory
+touch scripts/build_index.py
+Now edit the file with your favorite editor and add:
+
+python
+# scripts/build_index.py
+import json
+import os
+import sys
+from llama_index import VectorStoreIndex, SimpleDirectoryReader, ServiceContext
+from llama_index.llms import Ollama
+
+# Load config
+with open("config/settings.json", "r") as f:
+    config = json.load(f)
+
+OBSIDIAN_PATH = config["obsidian_vault_path"]
+INDEX_DIR = config["index_dir"]
+
+def create_index():
+    print("Building index from Obsidian vault...")
+    # Check if Obsidian path exists
+    if not os.path.exists(OBSIDIAN_PATH):
+        print(f"Error: Obsidian vault path {OBSIDIAN_PATH} does not exist")
+        sys.exit(1)
+        
+    # Load documents from Obsidian vault
+    documents = SimpleDirectoryReader(OBSIDIAN_PATH, recursive=True).load_data()
+    print(f"Loaded {len(documents)} documents")
+    
+    # Connect to Ollama
+    llm = Ollama(model=config["llm_model"], url=config["llm_url"])
+    
+    # Create service context
+    service_context = ServiceContext.from_defaults(llm=llm)
+    
+    # Create and save index
+    index = VectorStoreIndex.from_documents(
+        documents, 
+        service_context=service_context
+    )
+    
+    # Create directory if it doesn't exist
+    os.makedirs(os.path.dirname(INDEX_DIR), exist_ok=True)
+    
+    # Save index
+    index.storage_context.persist(INDEX_DIR)
+    print(f"Index created successfully at {INDEX_DIR}")
+    return index
+
+if __name__ == "__main__":
+    create_index()
+Create a Query Script
+bash
+touch scripts/query_notes.py
+Add the following content:
+
+python
+# scripts/query_notes.py
+import json
+import os
+import sys
+from llama_index import StorageContext, load_index_from_storage, ServiceContext
+from llama_index.llms import Ollama
+from llama_index.prompts import PromptTemplate
+
+# Load config
+with open("config/settings.json", "r") as f:
+    config = json.load(f)
+
+INDEX_DIR = config["index_dir"]
+
+def query_index(query_text):
+    # Check if index exists
+    if not os.path.exists(INDEX_DIR):
+        print(f"Error: Index not found at {INDEX_DIR}. Please build it first.")
+        sys.exit(1)
+        
+    print(f"Querying: '{query_text}'")
+    
+    # Connect to Ollama
+    llm = Ollama(model=config["llm_model"], url=config["llm_url"])
+    service_context = ServiceContext.from_defaults(llm=llm)
+    
+    # Load index
+    storage_context = StorageContext.from_defaults(persist_dir=INDEX_DIR)
+    index = load_index_from_storage(storage_context, service_context=service_context)
+    
+    # Create custom RAG prompt template
+    rag_prompt_tmpl = PromptTemplate(
+        """\
+You are a helpful AI assistant with access to a knowledge base of personal notes.
+
+Human query: {query_str}
+
+The following context information from the knowledge base might be helpful:
+{context_str}
+
+When answering:
+1. First consider what the user is asking for
+2. Carefully review the provided context
+3. Formulate a clear, helpful response based on the context
+4. If the context doesn't contain relevant information, acknowledge this limitation
+5. Format your response in a clean, readable way
+
+Your response:
+"""
+    )
+    
+    # Create query engine with custom prompt
+    query_engine = index.as_query_engine(
+        text_qa_template=rag_prompt_tmpl,
+        similarity_top_k=5
+    )
+    
+    # Query
+    response = query_engine.query(query_text)
+    return str(response)
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python query_notes.py 'your query here'")
+        sys.exit(1)
+    
+    query = sys.argv[1]
+    result = query_index(query)
+    print("\nResponse:")
+    print(result)
+Create a Project Summary Script
+bash
+touch scripts/generate_summary.py
+Add this content:
+
+python
+# scripts/generate_summary.py
+import json
+import os
+import sys
+import datetime
+from llama_index import StorageContext, load_index_from_storage, ServiceContext
+from llama_index.llms import Ollama
+from llama_index.prompts import PromptTemplate
+
+# Load config
+with open("config/settings.json", "r") as f:
+    config = json.load(f)
+
+INDEX_DIR = config["index_dir"]
+
+def generate_project_summary():
+    # Check if index exists
+    if not os.path.exists(INDEX_DIR):
+        print(f"Error: Index not found at {INDEX_DIR}. Please build it first.")
+        sys.exit(1)
+        
+    print("Generating project summary...")
+    
+    # Connect to Ollama
+    llm = Ollama(model=config["llm_model"], url=config["llm_url"])
+    service_context = ServiceContext.from_defaults(llm=llm)
+    
+    # Load index
+    storage_context = StorageContext.from_defaults(persist_dir=INDEX_DIR)
+    index = load_index_from_storage(storage_context, service_context=service_context)
+    
+    # Create custom summary prompt template
+    summary_prompt_tmpl = PromptTemplate(
+        f"""\
+You are a helpful AI assistant tasked with creating a project status report.
+
+I need you to create a comprehensive project status report based on my notes.
+
+Here's what I need in the report:
+1. ACTIVE PROJECTS: List all currently active projects with brief descriptions
+2. PRIORITY TASKS: Identify high-priority unfinished tasks across all projects
+3. BLOCKED ITEMS: Note any tasks or projects that appear to be blocked or delayed
+4. RECENT ACCOMPLISHMENTS: Summarize recently completed milestones or tasks
+5. UPCOMING DEADLINES: List any approaching deadlines mentioned in the notes
+
+When creating this report:
+- Think step-by-step about the information in my notes
+- Only include projects and tasks actually mentioned in the context
+- Format the report as a clean, well-structured markdown document
+- Use headings, bullet points, and emphasis to improve readability
+
+Context from my notes:
+{{context_str}}
+
+Today's date: {datetime.datetime.now().strftime("%Y-%m-%d")}
+
+Create the project status report:
+"""
+    )
+    
+    # Create query engine with custom prompt
+    query_engine = index.as_query_engine(
+        text_qa_template=summary_prompt_tmpl,
+        similarity_top_k=10
+    )
+    
+    # Query with empty prompt since context is handled in the template
+    response = query_engine.query("")
+    
+    # Format as markdown
+    today = datetime.datetime.now().strftime("%Y-%m-%d")
+    markdown_output = f"""# Project Status Summary
+Generated: {today}
+
+{str(response)}
+"""
+    
+    # Create directory for summaries if it doesn't exist
+    os.makedirs("data/summaries", exist_ok=True)
+    
+    # Save to file
+    output_file = f"data/summaries/project_summary_{today}.md"
+    with open(output_file, "w") as f:
+        f.write(markdown_output)
+    
+    print(f"Project summary saved to {output_file}")
+    return output_file
+
+if __name__ == "__main__":
+    generate_project_summary()
+Create a Startup Script
+bash
+touch start_system.sh
+chmod +x start_system.sh
+Add this content:
+
+bash
+#!/bin/bash
+# start_system.sh - Start your productivity system
+
+# Function to check if a process is running
+is_running() {
+  pgrep -f "$1" >/dev/null
+  return $?
+}
+
+# Go to the project directory
+cd "$(dirname "$0")"
+
+# Activate conda environment
+eval "$(conda shell.bash hook)"
+conda activate productivity
+
+# Check if Ollama is running
+if ! is_running "ollama"; then
+  echo "Starting Ollama service..."
+  OLLAMA_HOST=localhost:11434 OLLAMA_KEEP_ALIVE=5h ollama serve &
+  sleep 5  # Give it time to start
+fi
+
+# Check if the index exists, build if needed
+if [ ! -d "./indices/obsidian_index" ]; then
+  echo "Building Obsidian index..."
+  python scripts/build_index.py
+fi
+
+# Start n8n if needed and not already running
+if ! is_running "n8n"; then
+  echo "Starting n8n..."
+  n8n start &
+  sleep 5
+fi
+
+echo "Productivity system is ready!"
+echo "- Ollama running at http://localhost:11434"
+echo "- n8n available at http://localhost:5678"
+echo
+echo "Commands:"
+echo "  python scripts/query_notes.py 'your query'"
+echo "  python scripts/generate_summary.py"
+Create a System Prompt File
+bash
+mkdir -p config/prompts
+touch config/prompts/system_prompt.txt
+Add this content:
+
+You are a helpful, accurate, and friendly AI assistant. You think step-by-step before answering. You prioritize being helpful while maintaining accuracy. When you're uncertain, acknowledge your limitations. Respond in a conversational, thoughtful manner.
+
+When helping with tasks:
+1. Break down complex problems into steps
+2. Provide clear explanations for your reasoning
+3. If coding, include comments to explain your approach
+4. Focus on providing practical solutions
+
+Always maintain context from our conversation. If I refer to something we discussed earlier, use that information in your response.
+Setup Configuration for tobbyml
+bash
+mkdir -p ~/.config/tobby
+touch ~/.config/tobby/config.yaml
+Add this content:
+
+yaml
+model_server: "http://localhost:11434"
+model: "llama3:8b"
+Running Your System
+Start your productivity system:
+bash
+# From your project directory
+./start_system.sh
+Test querying your notes:
+bash
+python scripts/query_notes.py "What are my current projects?"
+Generate a project summary:
+bash
+python scripts/generate_summary.py
+Access n8n at http://localhost:5678 to set up your workflows
+This gives you a complete, well-organized system that runs in a conda environment. The conda environment isolates your Python dependencies, making the system more stable and avoiding conflicts with other Python applications on your Mac.
+
+Would you like me to explain how to set up specific n8n workflows next, or would you prefer help with another aspect of the system?
+
+NoWritableEnvsDirError: No writeable envs directories configured.
+  - /Users/unman/.conda/envs
+  - /opt/miniconda3/envs
+
+It looks like you're encountering a permission issue with conda. This is a common problem with conda environments when the environment directories aren't writable by your user. Let's fix this issue and then proceed with setting up your productivity system.
+
+Fixing the Conda Environment Permission Issue
+There are several approaches to solve this problem:
+
+Option 1: Create a writable envs directory in your home folder
+bash
+# Create a conda environments directory in your home folder
+mkdir -p ~/.conda/envs
+
+# Configure conda to use this directory
+conda config --add envs_dirs ~/.conda/envs
+Option 2: Fix permissions on the existing directories
+bash
+# Check ownership of the directories
+ls -la /opt/miniconda3/envs
+ls -la ~/.conda/envs
+
+# Fix permissions if needed
+sudo chown -R $(whoami) ~/.conda/envs
+sudo chown -R $(whoami) /opt/miniconda3/envs
+Option 3: Use a different environment management tool
+If you continue having issues with conda, you might want to consider using Python's built-in venv instead:
+
+bash
+# Create a virtual environment
+python3 -m venv ~/llm_productivity/env
+
+# Activate it
+source ~/llm_productivity/env/bin/activate
+Try Creating the Environment Again
+After fixing the permissions, try creating the environment again:
+
+bash
+# Create the environment
+conda create -n productivity python=3.10
+
+# Activate it
+conda activate productivity
+If you're still having issues, let's try a slightly different approach:
+
+bash
+# Create a new environment in a specific location you control
+conda create --prefix ~/llm_productivity/conda_env python=3.10
+
+# Activate it
+conda activate ~/llm_productivity/conda_env
+Once you've successfully created and activated the environment, you can proceed with installing the necessary packages and setting up your productivity system as outlined in my previous message.
+
+Let me know which approach worked for you, and we can proceed with the next steps.
+
+venv worked
+
+Great! Now that you have a working virtual environment with venv, let's continue setting up your productivity system. Here's how to proceed:
+
+Continue Setup with Your Python venv
+First, make sure your virtual environment is activated:
+bash
+source ~/llm_productivity/env/bin/activate
+Install the necessary Python packages:
+bash
+# Install basic packages
+pip install numpy pandas
+
+# Install LlamaIndex and other needed packages
+pip install llama-index pymupdf pypdf
+pip install llama-index-llms-ollama
+pip install langchain
+Install Ollama
+Install Ollama at the system level (outside your venv):
+
+bash
+curl -fsSL https://ollama.com/install.sh | sh
+Then pull your chosen model:
+
+bash
+# Pull Llama 3 8B for a good balance of performance and quality
+ollama pull llama3:8b
+Setup n8n
+Install n8n using npm:
+
+bash
+# Install n8n globally
+npm install n8n -g
+
+# Or if you prefer to keep it isolated
+npm install n8n --prefix ~/llm_productivity/node_modules
+Project Directory Setup
+Now let's create your project structure:
+
+bash
+# Create project directory structure
+mkdir -p ~/llm_productivity/{scripts,config,data,indices}
+cd ~/llm_productivity
+Configuration Files
+Create your basic configuration:
+
+bash
+# Create config directory
+mkdir -p config
+
+# Create settings file
+cat > config/settings.json << EOL
+{
+  "obsidian_vault_path": "/path/to/your/obsidian/vault",
+  "llm_model": "llama3:8b",
+  "llm_url": "http://localhost:11434",
+  "index_dir": "./indices/obsidian_index"
+}
+EOL
+Make sure to edit the "obsidian_vault_path" to point to your actual Obsidian vault.
+
+Create the Python Scripts
+Create the same Python scripts I detailed in my previous message:
+
+The indexing script:
+bash
+touch scripts/build_index.py
+The query script:
+bash
+touch scripts/query_notes.py
+The summary generator:
+bash
+touch scripts/generate_summary.py
+Edit each file and add the Python code I provided earlier.
+
+Create Your Startup Script
+bash
+touch start_system.sh
+chmod +x start_system.sh
+Edit the startup script to use venv instead of conda:
+
+bash
+#!/bin/bash
+# start_system.sh - Start your productivity system
+
+# Function to check if a process is running
+is_running() {
+  pgrep -f "$1" >/dev/null
+  return $?
+}
+
+# Go to the project directory
+cd "$(dirname "$0")"
+
+# Activate virtual environment
+source env/bin/activate
+
+# Check if Ollama is running
+if ! is_running "ollama"; then
+  echo "Starting Ollama service..."
+  OLLAMA_HOST=localhost:11434 OLLAMA_KEEP_ALIVE=5h ollama serve &
+  sleep 5  # Give it time to start
+fi
+
+# Check if the index exists, build if needed
+if [ ! -d "./indices/obsidian_index" ]; then
+  echo "Building Obsidian index..."
+  python scripts/build_index.py
+fi
+
+# Start n8n if needed and not already running
+if ! is_running "n8n"; then
+  echo "Starting n8n..."
+  n8n start &
+  sleep 5
+fi
+
+echo "Productivity system is ready!"
+echo "- Ollama running at http://localhost:11434"
+echo "- n8n available at http://localhost:5678"
+echo
+echo "Commands:"
+echo "  python scripts/query_notes.py 'your query'"
+echo "  python scripts/generate_summary.py"
+Setting Up tobbyml Configuration
+bash
+mkdir -p ~/.config/tobby
+cat > ~/.config/tobby/config.yaml << EOL
+model_server: "http://localhost:11434"
+model: "llama3:8b"
+EOL
+Running Your System
+Start your productivity system:
+bash
+# From your project directory
+./start_system.sh
+Test querying your notes:
+bash
+python scripts/query_notes.py "What are my current projects?"
+Generate a project summary:
+bash
+python scripts/generate_summary.py
+Access n8n at http://localhost:5678 to set up your workflows
+Using venv instead of conda gives you a lighter setup that's still isolated from your system Python. Everything else should work just as described in my previous message.
+
+Is there a specific part of the system you'd like me to explain in more detail, or would you like help with creating an n8n workflow for your productivity system?
+
+starting from install ollama - remember im not on linux but macos
+
+You're right, let me adjust the instructions specifically for macOS since there are some differences. Let's start from the Ollama installation step:
+
+Install Ollama on macOS
+For macOS, you can download and install Ollama from the official website or use Homebrew:
+
+bash
+# Option 1: Using Homebrew
+brew install ollama
+
+# Option 2: Direct download
+# Visit https://ollama.com/download and download the macOS installer
+After installation, pull your chosen model:
+
+bash
+# Pull Llama 3 8B for a good balance of performance and quality
+ollama pull llama3:8b
+Setup n8n on macOS
+Install n8n using npm:
+
+bash
+# Install Node.js first if you don't have it
+brew install node
+
+# Then install n8n globally
+npm install n8n -g
+
+# Or if you prefer to keep it isolated
+npm install n8n --prefix ~/llm_productivity/node_modules
+Project Directory Setup
+Create your project structure:
+
+bash
+# Create project directory structure
+mkdir -p ~/llm_productivity/{scripts,config,data,indices}
+cd ~/llm_productivity
+Configuration Files
+Create your basic configuration:
+
+bash
+# Create config directory
+mkdir -p config
+
+# Create settings file using your favorite text editor, or:
+cat > config/settings.json << EOL
+{
+  "obsidian_vault_path": "/Users/YOUR_USERNAME/Documents/Obsidian/YourVaultName",
+  "llm_model": "llama3:8b",
+  "llm_url": "http://localhost:11434",
+  "index_dir": "./indices/obsidian_index"
+}
+EOL
+Make sure to replace YOUR_USERNAME and YourVaultName with your actual macOS username and Obsidian vault name.
+
+Create the Python Scripts
+Create the same Python scripts I detailed earlier. You can use TextEdit, VS Code, or any editor you prefer:
+
+For the indexing script, create scripts/build_index.py
+For the query script, create scripts/query_notes.py
+For the summary generator, create scripts/generate_summary.py
+Add the Python code I provided earlier to each file.
+
+Create Your Startup Script (macOS version)
+bash
+touch start_system.sh
+chmod +x start_system.sh
+Edit the startup script with macOS-specific commands:
+
+bash
+#!/bin/bash
+# start_system.sh - Start your productivity system on macOS
+
+# Function to check if a process is running
+is_running() {
+  pgrep -f "$1" >/dev/null
+  return $?
+}
+
+# Go to the project directory
+cd "$(dirname "$0")"
+
+# Activate virtual environment
+source env/bin/activate
+
+# Check if Ollama is running
+if ! is_running "ollama"; then
+  echo "Starting Ollama service..."
+  open -a Ollama
+  # OR for command line version: 
+  # ollama serve &
+  sleep 5  # Give it time to start
+fi
+
+# Check if the index exists, build if needed
+if [ ! -d "./indices/obsidian_index" ]; then
+  echo "Building Obsidian index..."
+  python scripts/build_index.py
+fi
+
+# Start n8n if needed and not already running
+if ! is_running "n8n"; then
+  echo "Starting n8n..."
+  n8n start &
+  sleep 5
+fi
+
+echo "Productivity system is ready!"
+echo "- Ollama running at http://localhost:11434"
+echo "- n8n available at http://localhost:5678"
+echo
+echo "Commands:"
+echo "  python scripts/query_notes.py 'your query'"
+echo "  python scripts/generate_summary.py"
+Setting Up tobbyml Configuration
+bash
+mkdir -p ~/.config/tobby
+cat > ~/.config/tobby/config.yaml << EOL
+model_server: "http://localhost:11434"
+model: "llama3:8b"
+EOL
+Running Your System
+Start your productivity system:
+bash
+# From your project directory
+./start_system.sh
+Test querying your notes:
+bash
+python scripts/query_notes.py "What are my current projects?"
+Generate a project summary:
+bash
+python scripts/generate_summary.py
+Access n8n at http://localhost:5678 to set up your workflows
+The main differences for macOS are:
+
+The Ollama installation method
+The paths for your Obsidian vault
+The way processes are started (using open -a for GUI apps)
+Do you want me to help with any specific part of this setup, or would you like guidance on creating n8n workflows next?
+
+the results are very disapointing.  project summary report is like this # Project Status Summary
+Generated: 2025-04-11
+Project Status Report
+As of 2025-04-11
+# ACTIVE PROJECTS:
+There are no active projects mentioned in your notes. It appears that these documents may be related to research papers or academic studies, rather than actual projects.
+# PRIORITY TASKS:
+Since there are no active projects, there are no priority tasks to report. However, if you'd like to discuss potential priorities based on the topics covered in the documents, please let me know!
+# BLOCKED ITEMS:
+There are no blocked items reported in your notes.
+# RECENT ACCOMPLISHMENTS:
+Unfortunately, since these documents appear to be related to research papers, there are no recent accomplishments to report.
+# UPCOMING DEADLINES:
+There are no upcoming deadlines mentioned in your notes.
+That's all for this project status report! If you have any questions or would like me to help with anything else, please let me know.
+
+I understand your disappointment with the summary results. This is a common challenge when first setting up RAG systems with local LLMs. Let's troubleshoot and improve your results:
+
+Troubleshooting the RAG System
+There are several possible issues:
+
+Document parsing issues: The system might not be properly extracting content from your Obsidian notes
+Index quality issues: The vector embeddings might not be capturing the relationships well
+Query construction issues: The prompts might not be effective for the local model
+Model limitations: Local models have smaller context windows than Claude
+Let's address these one by one:
+
+1. First, let's check if your notes are being properly indexed:
+bash
+# Add this debugging script
+touch scripts/debug_index.py
+Add this content to the script:
+
+python
+# scripts/debug_index.py
+import json
+import os
+import sys
+from llama_index import SimpleDirectoryReader
+
+# Load config
+with open("config/settings.json", "r") as f:
+    config = json.load(f)
+
+OBSIDIAN_PATH = config["obsidian_vault_path"]
+
+def debug_index():
+    print(f"Checking Obsidian vault at {OBSIDIAN_PATH}...")
+    
+    # Check if path exists
+    if not os.path.exists(OBSIDIAN_PATH):
+        print(f"Error: Obsidian vault path {OBSIDIAN_PATH} does not exist")
+        sys.exit(1)
+    
+    # List all markdown files
+    md_files = []
+    for root, dirs, files in os.walk(OBSIDIAN_PATH):
+        for file in files:
+            if file.endswith('.md'):
+                md_files.append(os.path.join(root, file))
+    
+    print(f"Found {len(md_files)} markdown files")
+    
+    # Try to load documents
+    documents = SimpleDirectoryReader(OBSIDIAN_PATH, recursive=True).load_data()
+    print(f"Successfully loaded {len(documents)} documents")
+    
+    # Print sample content from the first few documents
+    for i, doc in enumerate(documents[:3]):
+        print(f"\nDocument {i+1} sample:")
+        print("-" * 50)
+        print(doc.text[:300] + "...")
+        print("-" * 50)
+
+if __name__ == "__main__":
+    debug_index()
+Run this script to see if your documents are being loaded correctly:
+
+bash
+python scripts/debug_index.py
+2. Improved RAG System
+Let's improve your RAG system with better prompt handling and document processing:
+
+bash
+# Create an improved summary generator
+touch scripts/improved_summary.py
+Add this content:
+
+python
+# scripts/improved_summary.py
+import json
+import os
+import sys
+import datetime
+from llama_index import StorageContext, load_index_from_storage, ServiceContext
+from llama_index import VectorStoreIndex, SimpleDirectoryReader
+from llama_index.llms import Ollama
+from llama_index.prompts import PromptTemplate
+
+# Load config
+with open("config/settings.json", "r") as f:
+    config = json.load(f)
+
+OBSIDIAN_PATH = config["obsidian_vault_path"]
+INDEX_DIR = config["index_dir"]
+
+def rebuild_index():
+    print("Rebuilding index from Obsidian vault...")
+    
+    # Load documents from Obsidian vault
+    documents = SimpleDirectoryReader(
+        OBSIDIAN_PATH, 
+        recursive=True,
+        filename_as_id=True,
+        required_exts=[".md"]
+    ).load_data()
+    
+    print(f"Loaded {len(documents)} documents")
+    
+    # Connect to Ollama
+    llm = Ollama(model=config["llm_model"], url=config["llm_url"])
+    
+    # Create service context
+    service_context = ServiceContext.from_defaults(llm=llm)
+    
+    # Create and save index
+    index = VectorStoreIndex.from_documents(
+        documents, 
+        service_context=service_context
+    )
+    
+    # Create directory if it doesn't exist
+    os.makedirs(os.path.dirname(INDEX_DIR), exist_ok=True)
+    
+    # Save index
+    index.storage_context.persist(INDEX_DIR)
+    print(f"Index rebuilt successfully at {INDEX_DIR}")
+    return index
+
+def generate_project_summary():
+    # Check if index exists
+    if not os.path.exists(INDEX_DIR):
+        print(f"Index not found at {INDEX_DIR}. Building it now...")
+        rebuild_index()
+    
+    print("Generating improved project summary...")
+    
+    # Connect to Ollama
+    llm = Ollama(model=config["llm_model"], url=config["llm_url"])
+    service_context = ServiceContext.from_defaults(llm=llm)
+    
+    # Load index
+    storage_context = StorageContext.from_defaults(persist_dir=INDEX_DIR)
+    index = load_index_from_storage(storage_context, service_context=service_context)
+    
+    # Use a very specific summary prompt template
+    summary_prompt_tmpl = PromptTemplate(
+        """\
+You are an AI assistant analyzing Obsidian notes to create a project summary.
+
+I need a detailed summary of ongoing projects and tasks found in my Obsidian vault notes.
+
+Before answering, carefully analyze the provided context for:
+- Any mentions of projects, tasks, TODO items, or work in progress
+- Deadlines, due dates, or timeframes mentioned
+- Status indicators like "started", "in progress", "pending", "completed"
+- Any section that might describe ongoing work
+
+Context from notes:
+{context_str}
+
+Format the response as:
+
+# ACTIVE PROJECTS
+[List each project with 1-2 sentence description]
+
+# PRIORITY TASKS
+[List specific unfinished tasks, with project association if known]
+
+# BLOCKED ITEMS
+[Note any tasks that appear blocked or awaiting something]
+
+# RECENT ACCOMPLISHMENTS
+[Note any recently completed items]
+
+# UPCOMING DEADLINES
+[Note any approaching deadlines mentioned]
+
+If you truly cannot find any projects or tasks, suggest checking specific Obsidian folders like "Projects", "Tasks", or "TODO" instead of stating there are none.
+"""
+    )
+    
+    # Create query engine with custom prompt
+    query_engine = index.as_query_engine(
+        text_qa_template=summary_prompt_tmpl,
+        similarity_top_k=15  # Get more context
+    )
+    
+    # Run a more focused query
+    response = query_engine.query("Find all projects, tasks, and todos in my notes")
+    
+    # Format as markdown
+    today = datetime.datetime.now().strftime("%Y-%m-%d")
+    markdown_output = f"""# Project Status Summary
+Generated: {today}
+
+{str(response)}
+"""
+    
+    # Create directory for summaries if it doesn't exist
+    os.makedirs("data/summaries", exist_ok=True)
+    
+    # Save to file
+    output_file = f"data/summaries/project_summary_{today}.md"
+    with open(output_file, "w") as f:
+        f.write(markdown_output)
+    
+    print(f"Improved project summary saved to {output_file}")
+    return output_file
+
+if __name__ == "__main__":
+    generate_project_summary()
+3. Check Your Obsidian Structure
+For best results with the RAG system, your Obsidian vault should have:
+
+Clear task markers: Use - [ ] for tasks or TODO: markers
+Project organization: Consider having project-specific folders or tags
+Frontmatter: Add YAML frontmatter to key notes with status: fields
+If your vault doesn't have these, you might want to create a few test notes with clear project/task formats.
+
+4. Try a Direct Query Approach
+Let's also create a more direct query tool that doesn't rely as heavily on the RAG index:
+
+bash
+touch scripts/direct_query.py
+Add this content:
+
+python
+# scripts/direct_query.py
+import json
+import os
+import sys
+from llama_index import SimpleDirectoryReader
+from llama_index.llms import Ollama
+
+# Load config
+with open("config/settings.json", "r") as f:
+    config = json.load(f)
+
+OBSIDIAN_PATH = config["obsidian_vault_path"]
+
+def direct_query(query_type="projects"):
+    print(f"Performing direct query for {query_type}...")
+    
+    # Load documents directly
+    documents = SimpleDirectoryReader(
+        OBSIDIAN_PATH, 
+        recursive=True,
+        required_exts=[".md"]
+    ).load_data()
+    
+    print(f"Loaded {len(documents)} documents")
+    
+    # Connect to Ollama
+    llm = Ollama(model=config["llm_model"], url=config["llm_url"])
+    
+    # Collect text from all documents
+    all_text = ""
+    for doc in documents:
+        # Only add text containing keywords for efficiency
+        if query_type == "projects":
+            if "project" in doc.text.lower() or "task" in doc.text.lower() or "todo" in doc.text.lower():
+                all_text += doc.text + "\n\n"
+        else:
+            all_text += doc.text + "\n\n"
+    
+    # Truncate if too long - adjust for your model's context window
+    max_chars = 10000  # Adjust based on your model's capabilities
+    if len(all_text) > max_chars:
+        all_text = all_text[:max_chars]
+    
+    # Create prompt based on query type
+    if query_type == "projects":
+        prompt = f"""
+Based on these notes, identify all projects and tasks:
+
+{all_text}
+
+Please list:
+1. All projects mentioned
+2. Tasks associated with each project
+3. Any deadlines mentioned
+
+Format the response as a well-structured markdown document.
+"""
+    
+    # Get response from LLM
+    response = llm.complete(prompt)
+    
+    # Print and save response
+    print("\n" + str(response) + "\n")
+    
+    # Save to file
+    output_dir = "data/direct_queries"
+    os.makedirs(output_dir, exist_ok=True)
+    
+    output_file = f"{output_dir}/{query_type}_query.md"
+    with open(output_file, "w") as f:
+        f.write(str(response))
+    
+    print(f"Response saved to {output_file}")
+    return output_file
+
+if __name__ == "__main__":
+    query_type = "projects"
+    if len(sys.argv) > 1:
+        query_type = sys.argv[1]
+    
+    direct_query(query_type)
+Run this tool to try a direct approach:
+
+bash
+python scripts/direct_query.py
+5. Try a Different Model
+If you're still getting disappointing results, consider trying a different model that might handle your use case better:
+
+bash
+# Try Mistral 7B, which is often good with task extraction
+ollama pull mistral
+Then update your config/settings.json file to use this model instead:
+
+json
+{
+  "obsidian_vault_path": "/path/to/your/obsidian/vault",
+  "llm_model": "mistral",
+  "llm_url": "http://localhost:11434",
+  "index_dir": "./indices/obsidian_index"
+}
+6. Sample Note Structure
+If your notes aren't structured in a way that makes projects and tasks explicit, consider adding a few test notes with this structure:
+
+markdown
+---
+status: active
+type: project
+priority: high
+deadline: 2025-05-01
+---
+
+# Project Name
+
+## Description
+Brief description of the project
+
+## Tasks
+- [ ] Task 1 - Due: 2025-04-20
+- [x] Completed task
+- [ ] Blocked task - waiting for XYZ
+- [ ] Next task
+
+## Notes
+Additional project notes here.
+With these improvements, you should get much better results from your project summary tool. The key is making sure your notes have explicit project and task information and that the RAG system is effectively extracting this information.
+
+Would you like me to help with any particular aspect of these improvements?
+
+
+

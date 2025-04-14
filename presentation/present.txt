@@ -1,0 +1,383 @@
+
+---
+title: "Slow Productivity AI"
+subtitle: "PyCon Lithuania 2025"
+author: "stepinski"
+institute: "infinitii ai"
+date: "April 25, 2025"
+format:
+  revealjs:
+    theme: [default, styles/custom.scss]
+    logo: "images/PyConLT_horizontalus_baltas-konturas_RGB.png"
+    footer: "PyCon Lithuania 2025"
+    slide-number: true
+    navigation-mode: vertical
+    controls: true
+    transition: slide
+    background-transition: fade
+    preview-links: auto
+    font-size: 24px
+    font-family: "JetBrains Mono, Fira Code, monospace"
+    height: 900
+    width: 1600
+    margin: 0.1
+    code-block-background: true
+    code-block-border-left: false
+    code-line-numbers: false
+    highlight-style: github
+---
+
+<!-- Add Catppuccin theme styling for code blocks -->
+<style>
+.sourceCode {
+  background-color: #1e1e2e; /* Catppuccin mocha base */
+  color: #cdd6f4; /* Catppuccin mocha text */
+}
+.sourceCode .kw { color: #cba6f7; } /* keywords - mauve */
+.sourceCode .dt { color: #f38ba8; } /* data types - red */
+.sourceCode .dv { color: #fab387; } /* decimal values - peach */
+.sourceCode .st { color: #a6e3a1; } /* strings - green */
+.sourceCode .co { color: #585b70; } /* comments - surface2 */
+.sourceCode .fu { color: #89b4fa; } /* functions - blue */
+.sourceCode .va { color: #f5c2e7; } /* variables - pink */
+.sourceCode .op { color: #89dceb; } /* operators - sky */
+.sourceCode .bu { color: #f9e2af; } /* built-in functions - yellow */
+pre {
+  border-radius: 8px;
+  padding: 10px;
+}
+code {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+</style>
+
+# Slow Productivity AI
+
+## About Me
+
+- CTO at infinitii ai
+- GitHub: stepinski
+- LinkedIn: stepinsky
+- Email: stepinski@gmail.com
+
+## Agenda
+
+1. The Slow Productivity Concept
+2. My "Why": The Problem with Knowledge Work
+3. The Vision: AI-Enhanced Deep Work
+4. Technical Implementation
+5. Solution Demonstration: Key Pipelines
+6. Conclusion & Q&A
+
+# The Slow Productivity Philosophy
+
+## Cal Newport's Concept
+
+> "In his book Slow Productivity, Cal Newport argues that modern work culture prioritizes busyness over effectiveness, leading to stress, shallow work, and burnout."
+
+- Work at a **natural, sustainable pace**
+  - Automate routine tasks without adding friction
+- **Prioritize meaningful work**
+  - Focus on high-impact tasks, not constant busyness
+- **Reduce distractions**
+  - Create environments that support deep focus
+
+# My "Why"
+
+## The Problem with Modern Knowledge Work
+
+- **Daily reality as CTO:**
+  - Project and people management
+  - Strategic planning and decision-making
+  - Context-switching between technical and leadership roles
+  - Balancing deep technical work with team oversight
+
+## The Note-Taking Struggle
+
+- Tried various techniques:
+  - PARA method
+  - Zettelkasten for unstructured thinking
+  
+- **First obstacle: Habit consistency**
+  - Can consistently take notes...
+  - ...but they're unstructured and disconnected
+  - No time for proper review and organization
+
+```python
+# What my notes effectively look like:
+notes = [
+    {"date": "2025-03-15", "content": "Team mtg - somone should follow up on API keys"},
+    {"date": "2025-03-17", "content": "idea for streamlining deplymnt process"},
+    {"date": "2025-03-20", "content": "todo: revew PR for data pipeline"},
+    # Typos, incomplete thoughts, buried tasks, no structure
+]
+```
+
+# My Core Belief
+
+## AI Can Free Our Creative Potential
+
+> Through AI we can automate the dull and time-consuming stuff to free up more creative potential of our minds
+
+- Notes organization shouldn't require manual effort
+- Task extraction can be automated
+- Knowledge connections can be discovered automatically
+- **All while maintaining privacy and control**
+
+## How This Aligns with Slow Productivity
+
+- **Automate the shallow work**
+  - Let AI handle organizing, connecting, task-tracking
+- **Preserve mental space for deep work**
+  - Free from organizational overhead
+- **Reduce cognitive load**
+  - One system instead of many disconnected tools
+
+# The Technical Vision
+
+## Ideal Workflow Components
+
+![Slow Productivity AI Architecture](https://placehold.co/800x400)
+
+## Unified Knowledge Sources
+
+- **Obsidian notes** (primary knowledge base)
+- **Supernote handwritten content** (OCR processed)
+- **GitHub Issues** (work tasks)
+- **Email and Teams conversations** (transcribed)
+- **Browser bookmarks and read-later content**
+
+## Core Processing Components
+
+| Component | Role | Slow Productivity Benefit |
+|-----------|------|---------------------------|
+| **Hugging Face Transformers** | Local NLP for meaning extraction | Privacy, no context-switching |
+| **n8n** | Self-hosted automation workflows | Control, no third-party dependencies |
+| **Obsidian + GitHub Issues** | Knowledge and task management | Centralized system, reduced tool switching |
+| **Local LLM** | Same engine for all tools | Consistent context across interfaces |
+
+# Implementation Details
+
+## The Local LLM Setup
+
+```python
+# Core LLM selection for optimal local performance
+def setup_local_llm():
+    # Choose a balanced model
+    """
+    For productivity and note summarization:
+    
+    Llama 3 8B: Good balance of performance/resources
+    Mistral 7B: Efficient for summarization
+    Phi-3 mini: Good for lightweight installations
+    """
+    
+    # Install Ollama for centralized service
+    # bash: curl -fsSL https://ollama.com/install.sh | sh
+    
+    # Pull model and start service
+    # bash: ollama pull llama3:8b
+    # bash: OLLAMA_HOST=localhost:11434 ollama serve
+```
+
+## Notes Processing with LlamaIndex
+
+```python
+from llama_index import VectorStoreIndex, SimpleDirectoryReader
+from llama_index.llms import Ollama
+
+def process_obsidian_notes():
+    # Path to Obsidian vault
+    OBSIDIAN_PATH = "/path/to/obsidian/vault"
+    
+    # Load documents
+    documents = SimpleDirectoryReader(
+        OBSIDIAN_PATH, recursive=True
+    ).load_data()
+    
+    # Connect to local LLM
+    llm = Ollama(model="llama3:8b", url="http://localhost:11434")
+    
+    # Create index
+    index = VectorStoreIndex.from_documents(documents)
+    
+    # Extract tasks
+    tasks = []
+    for doc in documents:
+        if "TODO" in doc.text or "- [ ]" in doc.text:
+            extracted = extract_tasks(doc.text, llm)
+            tasks.extend(extracted)
+    
+    return tasks
+```
+
+## n8n Automation Workflow
+
+![n8n Workflow for Task Extraction](https://placehold.co/800x400)
+
+- **Scheduled workflows** run during non-focus time
+- **Event-based triggers** for new notes or changes
+- **Multi-step processing** to extract and structure tasks
+
+## Task Management Integration
+
+```python
+# Convert extracted insights to GitHub Issues
+def create_github_tasks(tasks):
+    from github import Github
+    
+    # Connect to GitHub with token
+    g = Github(os.environ.get("GITHUB_TOKEN"))
+    repo = g.get_repo("username/tasks-repo")
+    
+    for task in tasks:
+        # Check for duplicates
+        if not is_duplicate_task(repo, task["title"]):
+            # Create issue with metadata
+            repo.create_issue(
+                title=task["title"],
+                body=f"Source: {task['source']}\n\n" + 
+                     f"Context: {task['context']}",
+                labels=["auto-generated", task["priority"]]
+            )
+```
+
+# Solution Demonstration: Key Pipelines
+
+## Demonstration Approach
+
+- **Pre-recorded short clips** + live commentary
+- Focus on **outputs and results** rather than implementation details
+- Show the **end-user experience** of using the system
+
+![Demo Flow Visualization](https://placehold.co/800x400)
+
+## Pipeline 1: Notes Improvement
+
+### Before:
+```
+Meeting with team (04/12)
+discussed new data pipeline issues - john mentioned 
+sometihng about permissions
+todo look into this next week
+also API seems slow - maybe caching?
+should talk to devops team about K8s resources
+```
+
+### After AI Processing:
+```
+# Meeting: Team Sync (2025-04-12)
+
+## Participants
+- Our team
+- John (mentioned permissions issue)
+
+## Key Topics
+- Data pipeline issues
+  - Permissions problems reported by John
+  - ACTION: Investigate permissions next week
+
+- API Performance
+  - Slow response times reported
+  - Potential solution: Implement caching
+  - ACTION: Discuss K8s resources with DevOps
+
+## Follow-ups
+- [ ] Investigate pipeline permissions (Due: 4/19)
+- [ ] Schedule DevOps meeting (Due: 4/15)
+```
+
+## Pipeline 2: Project Summary Report
+
+### n8n Workflow:
+```
++---------------------+       +-------------------------+
+| Obsidian Vault      |       | GitHub Issues API       |
+| Change Trigger      |       | (Create Issue)          |
++----------+----------+       +------------+------------+
+           |                               |
+           v                               |
++----------+----------+                    |
+| Local LLM Node      |                    |
+| (Extract Tasks)     |                    |
++----------+----------+                    |
+           |                               |
+           v                               |
++----------+----------+                    |
+| Task Processing     |                    |
+| (Format & Enhance)  |                    |
++----------+----------+                    |
+           |                               |
+           v                               |
++----------+----------+    +--------------v-------------+
+| Filter Tasks        +--->+ Create GitHub Issue        |
+| (Priority > Medium) |    | for Each Extracted Task    |
++---------------------+    +--------------------------+
+```
+
+- **Scheduled workflow** runs daily at 6am (before work)
+- Processes new notes and updates since last run
+- Generates executive summary of active projects 
+- **Demo output**: Clean markdown with actionable insights
+
+## Pipeline 3: Daily Template & GitHub Integration
+
+```
+# Daily Focus (2025-04-25)
+
+## Priority Tasks Today
+1. [API-123] Finalize data pipeline parameters
+2. [INFRA-45] Review Kubernetes configs 
+3. [TEAM-12] Prepare sprint planning agenda
+
+## Recent Updates
+- PR #234 merged (ML pipeline optimization)
+- Data quality checks passing on production
+- Onboarding materials ready for review
+
+## Focus Blocks
+09:00-11:00: Deep work on API-123
+13:00-14:30: Team sync meeting
+15:00-17:00: Deep work on INFRA-45
+```
+
+- Show n8n workflow execution
+- Demonstrate GitHub Issues → Daily Focus integration
+- Emphasize how this preserves deep work
+
+# Conclusion
+
+## The Slow Productivity AI Advantage
+
+- **Consistency without effort** - maintain notes without organizational overhead
+- **Privacy by design** - fully local processing, your data stays yours
+- **Reduced cognitive load** - automation frees mental space for creative work
+- **Deep work preserved** - minimize context switching and distractions
+
+> "The goal isn't faster productivity, but deeper, more meaningful productivity."
+
+## Key Takeaways
+
+1. **Slow productivity is about meaningful output, not speed**
+   - AI should reduce friction, not add more digital noise
+   - Automation should serve deep work, not interrupt it
+
+2. **Privacy and ownership matter**
+   - Local, open-source LLMs make this possible today
+   - Your knowledge base remains fully under your control
+
+3. **Start small, but think holistically**
+   - Begin with one pipeline that solves your biggest pain point
+   - Build toward a system that works the way your mind works
+
+## Resources
+
+- GitHub repository: [github.com/stepinski/slow-productivity-ai](https://github.com/stepinski/slow-productivity-ai)
+- Presentation slides: [github.com/stepinski/pycon-lithuania-2025](https://github.com/stepinski/pycon-lithuania-2025)
+- Recommended reading: "Slow Productivity" by Cal Newport
+
+## Questions?
+
+Thank you for your attention!
+
+![](images/orange-pycon-lithuania-2025.png){width=100px}

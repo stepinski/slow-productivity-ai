@@ -1,0 +1,166 @@
+/*-- scss:defaults --*/
+// PyConLT Colors - using lighter variants and smaller accents
+$pycon-yellow: #f7c118;
+$pycon-green: #006837;
+$pycon-red: #bf212f;
+$pycon-dark: #252525;
+$pycon-light: #ffffff;
+// Base colors
+$body-bg: $pycon-light;
+$body-color: $pycon-dark;
+$link-color: $pycon-green;
+$selection-bg: lighten($pycon-yellow, 30%);
+// Headings
+$presentation-heading-color: $pycon-dark;
+$presentation-heading-font: 'Roboto', sans-serif;
+$presentation-heading-font-weight: 500;
+// Code blocks
+$code-block-bg: #f8f8f8;
+$code-block-border-color: #ddd;
+
+/*-- scss:rules --*/
+.reveal .slides {
+  font-family: 'Roboto', sans-serif;
+}
+// Subtle header with small flag color accents
+.reveal h1 {
+  font-size: 2.2em;
+  font-weight: 600;
+  color: $pycon-dark;
+  border-bottom: 3px solid $pycon-yellow;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.reveal h2 {
+  font-size: 1.6em;
+  color: $pycon-dark;
+  border-left: 4px solid $pycon-green;
+  padding-left: 10px;
+}
+.reveal h3 {
+  font-size: 1.3em;
+  color: $pycon-dark;
+}
+.reveal strong {
+  color: $pycon-green;
+  font-weight: 600;
+}
+// Subtle footer
+.reveal .footer {
+  font-size: 0.6em;
+  color: #666;
+}
+// Minimal progress bar
+.reveal .progress {
+  height: 3px;
+  color: $pycon-green;
+}
+// Title slide - subtle flag reference
+.title-slide {
+  background-color: $pycon-light;
+  position: relative;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, $pycon-yellow 33%, $pycon-green 33%, $pycon-green 66%, $pycon-red 66%);
+  }
+}
+// Section slides - subtle with minimal coloring
+.section-slide {
+  h2 {
+    color: $pycon-green;
+    border-left: none;
+    padding-left: 0;
+  }
+  
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    height: 3px;
+    background-color: $pycon-yellow;
+  }
+}
+
+// Catppuccin code theme styling
+.sourceCode {
+  background-color: #1e1e2e; /* Catppuccin mocha base */
+  color: #cdd6f4; /* Catppuccin mocha text */
+}
+.sourceCode .kw { color: #cba6f7; } /* keywords - mauve */
+.sourceCode .dt { color: #f38ba8; } /* data types - red */
+.sourceCode .dv { color: #fab387; } /* decimal values - peach */
+.sourceCode .st { color: #a6e3a1; } /* strings - green */
+.sourceCode .co { color: #585b70; } /* comments - surface2 */
+.sourceCode .fu { color: #89b4fa; } /* functions - blue */
+.sourceCode .va { color: #f5c2e7; } /* variables - pink */
+.sourceCode .op { color: #89dceb; } /* operators - sky */
+.sourceCode .bu { color: #f9e2af; } /* built-in functions - yellow */
+
+// Code styling
+.reveal pre {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-left: 3px solid $pycon-green;
+  border-radius: 8px;
+  padding: 10px;
+  max-height: none !important;
+  overflow: hidden !important; /* Hide scrollbars */
+}
+.reveal code {
+  background-color: rgba(0,0,0,0.03);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+// Tables
+.reveal table {
+  margin: 1em 0;
+  
+  th {
+    border-bottom: 2px solid $pycon-green;
+    color: $pycon-dark;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.02);
+  }
+}
+// Blockquotes
+.reveal blockquote {
+  border-left: 3px solid $pycon-yellow;
+  background-color: rgba(0,0,0,0.02);
+  padding: 0.5em 1em;
+  margin: 1em 0;
+}
+// Logo
+.reveal .slide-logo {
+  max-height: 40px !important;
+}
+// Custom classes
+.yellow-text {
+  color: $pycon-yellow;
+}
+.green-text {
+  color: $pycon-green;
+}
+.red-text {
+  color: $pycon-red;
+}
+.lt-flag-border {
+  border-top: 3px solid $pycon-yellow;
+  border-middle: 3px solid $pycon-green;
+  border-bottom: 3px solid $pycon-red;
+}
+
+/* Notes styling for presenter mode */
+.notes {
+  display: none;
+}
