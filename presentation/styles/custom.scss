@@ -1,123 +1,165 @@
 /*-- scss:defaults --*/
-// PyConLT Colors - using lighter variants and smaller accents
-$pycon-yellow: #f7c118;
-$pycon-green: #006837;
-$pycon-red: #bf212f;
-$pycon-dark: #252525;
-$pycon-light: #ffffff;
+// PyCon Lithuania Colors - using colors from the shared palette
+$pycon-orange: #ff4400;     // Orange for highlights and underscores
+$pycon-blue: #9eb7f0;       // Blue for citations
+$pycon-dark-red: #7c2c28;   // Dark red for slide titles
+$pycon-burgundy: #410812;   // Burgundy for sections
+$pycon-mauve: #b3888c;      // Mauve for subtitles
+$pycon-dark: #151515;       // Dark for regular text
+$pycon-light: #ffffff;      // White background
+
 // Base colors
 $body-bg: $pycon-light;
 $body-color: $pycon-dark;
-$link-color: $pycon-green;
-$selection-bg: lighten($pycon-yellow, 30%);
-// Headings
-$presentation-heading-color: $pycon-dark;
-$presentation-heading-font: 'Roboto', sans-serif;
-$presentation-heading-font-weight: 500;
-// Code blocks
-$code-block-bg: #f8f8f8;
-$code-block-border-color: #ddd;
+$link-color: $pycon-orange;
+$selection-bg: lighten($pycon-blue, 30%);
+
+// Fonts
+$presentation-font-size-base: 1.2em;
+$presentation-font-family: 'Open Sans', sans-serif;
 
 /*-- scss:rules --*/
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Montserrat:wght@400;700&family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Oswald:wght@400;700&display=swap');
+
+// Base styling
 .reveal .slides {
-  font-family: 'Roboto', sans-serif;
-}
-// Subtle header with small flag color accents
-.reveal h1 {
-  font-size: 2.2em;
-  font-weight: 600;
-  color: $pycon-dark;
-  border-bottom: 3px solid $pycon-yellow;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-.reveal h2 {
-  font-size: 1.6em;
-  color: $pycon-dark;
-  border-left: 4px solid $pycon-green;
-  padding-left: 10px;
-}
-.reveal h3 {
-  font-size: 1.3em;
-  color: $pycon-dark;
-}
-.reveal strong {
-  color: $pycon-green;
-  font-weight: 600;
-}
-// Subtle footer
-.reveal .footer {
-  font-size: 0.6em;
-  color: #666;
-}
-// Minimal progress bar
-.reveal .progress {
-  height: 3px;
-  color: $pycon-green;
-}
-// Title slide - subtle flag reference
-.title-slide {
-  background-color: $pycon-light;
-  position: relative;
-  
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, $pycon-yellow 33%, $pycon-green 33%, $pycon-green 66%, $pycon-red 66%);
-  }
-}
-// Section slides - subtle with minimal coloring
-.section-slide {
-  h2 {
-    color: $pycon-green;
-    border-left: none;
-    padding-left: 0;
-  }
-  
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 20%;
-    height: 3px;
-    background-color: $pycon-yellow;
-  }
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
 }
 
-// Catppuccin code theme styling
-.sourceCode {
-  background-color: #1e1e2e; /* Catppuccin mocha base */
-  color: #cdd6f4; /* Catppuccin mocha text */
+// Title slide - use Bebas Neue for main title
+.reveal .title-slide h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5em;
+  color: $pycon-orange;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
-.sourceCode .kw { color: #cba6f7; } /* keywords - mauve */
-.sourceCode .dt { color: #f38ba8; } /* data types - red */
-.sourceCode .dv { color: #fab387; } /* decimal values - peach */
-.sourceCode .st { color: #a6e3a1; } /* strings - green */
-.sourceCode .co { color: #585b70; } /* comments - surface2 */
-.sourceCode .fu { color: #89b4fa; } /* functions - blue */
-.sourceCode .va { color: #f5c2e7; } /* variables - pink */
-.sourceCode .op { color: #89dceb; } /* operators - sky */
-.sourceCode .bu { color: #f9e2af; } /* built-in functions - yellow */
+
+.reveal .title-slide h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 2em;
+  color: $pycon-mauve;
+}
+
+// Section headings (# headings) - use Bebas Neue
+.reveal .slides section[data-level="1"] h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3em;
+  color: $pycon-burgundy;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+// Regular slide headings - use Oswald instead of Monument Extended
+.reveal h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 2.2em;
+  color: $pycon-dark-red;
+  text-transform: uppercase;
+}
+
+.reveal h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.8em;
+  color: $pycon-dark-red;
+  text-transform: uppercase;
+}
+
+.reveal h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 1.3em;
+  color: $pycon-mauve;
+}
+
+// Text blocks - use Open Sans
+.reveal p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: $pycon-dark;
+}
+
+// List items
+.reveal ul li, .reveal ol li {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: $pycon-dark;
+}
+
+// Emphasized text
+.reveal strong {
+  color: $pycon-orange;
+  font-weight: 700;
+}
+
+.reveal em {
+  font-style: italic;
+  color: $pycon-dark-red;
+}
+
+// Quotes for citations - use Open Sans italic
+.reveal blockquote {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  border-left: 3px solid $pycon-blue;
+  background-color: rgba(0,0,0,0.02);
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  color: $pycon-blue;
+}
+
+// For "Naudojamas teksto išskyrymui"
+.teksto-isskyrymui {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: $pycon-dark-red;
+  margin: 1em 0;
+  padding: 0.2em 0;
+}
+
+// For "Naudojamas teksto blokams"
+.teksto-blokams {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  color: $pycon-dark;
+  background-color: rgba($pycon-blue, 0.05);
+  padding: 1em;
+  border-radius: 4px;
+  margin: 1em 0;
+}
+
+// Minimal footer
+.reveal .footer {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.6em;
+  font-weight: 400;
+  color: #666;
+}
+
+// Clean progress bar
+.reveal .progress {
+  height: 3px;
+  color: $pycon-orange;
+}
 
 // Code styling
 .reveal pre {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  border-left: 3px solid $pycon-green;
-  border-radius: 8px;
+  box-shadow: none;
+  border-left: 3px solid $pycon-orange;
+  border-radius: 4px;
   padding: 10px;
-  max-height: none !important;
-  overflow: hidden !important; /* Hide scrollbars */
 }
+
 .reveal code {
+  font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", monospace;
   background-color: rgba(0,0,0,0.03);
   padding: 0.2em 0.4em;
   border-radius: 3px;
-  font-family: "JetBrains Mono", "Fira Code", monospace;
 }
 
 // Tables
@@ -125,39 +167,101 @@ $code-block-border-color: #ddd;
   margin: 1em 0;
   
   th {
-    border-bottom: 2px solid $pycon-green;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    border-bottom: 2px solid $pycon-mauve;
     color: $pycon-dark;
+  }
+  
+  td {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
   }
   
   tr:nth-child(even) {
     background-color: rgba(0,0,0,0.02);
   }
 }
-// Blockquotes
-.reveal blockquote {
-  border-left: 3px solid $pycon-yellow;
-  background-color: rgba(0,0,0,0.02);
-  padding: 0.5em 1em;
-  margin: 1em 0;
-}
+
 // Logo
+/* Regular logo styling */
 .reveal .slide-logo {
   max-height: 40px !important;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
 }
-// Custom classes
-.yellow-text {
-  color: $pycon-yellow;
+
+// /* Title slide footer image */
+// .title-slide::after {
+//   content: "";
+//   background-image: url('images/logo-orange.png');
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   width: 100%;
+//   height: 60px;
+//   position: absolute;
+//   bottom: 1em;
+//   left: 0;
+//   text-align: center;
+// }
+
+// Questions slide
+.reveal .question-slide {
+  position: relative;
 }
-.green-text {
-  color: $pycon-green;
+
+.reveal .question-slide h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3em;
+  color: $pycon-dark-red;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
-.red-text {
-  color: $pycon-red;
+
+.reveal .question-slide .centered-logo {
+  display: block;
+  margin: 2em auto;
+  max-width: 300px !important;
 }
-.lt-flag-border {
-  border-top: 3px solid $pycon-yellow;
-  border-middle: 3px solid $pycon-green;
-  border-bottom: 3px solid $pycon-red;
+
+/* Fragment animations */
+.reveal .fragment.fade-in {
+  opacity: 0;
+  visibility: hidden;
+}
+.reveal .fragment.fade-in.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.reveal .fragment.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.reveal .fragment.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal .fragment.fade-left {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+.reveal .fragment.fade-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal .fragment.fade-right {
+  opacity: 0;
+  transform: translateX(20px);
+}
+.reveal .fragment.fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Notes styling for presenter mode */

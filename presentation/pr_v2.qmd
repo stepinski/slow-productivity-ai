@@ -1,0 +1,789 @@
+---
+title: "Slow Productivity AI"
+subtitle: "to free us from meaningless tedium of cubicle job"
+# subtitle: "Enhancing Deep Work with Open-Source Automation"
+author: "Piotr Stepinski"
+institute: "Infinitii ai"
+date: "April 25, 2025"
+format:
+  revealjs:
+    theme: [default, styles/custom.scss]
+    logo: "images/logo.png"  # Logo for regular slides
+    # title-slide-attributes:
+      # data-footer-image: "images/logo-orange.png"
+    # footer: "PyCon LT 2025"
+    # slide-number: true
+    navigation-mode: vertical
+    controls: true
+    transition: slide
+    background-transition: fade
+    preview-links: auto
+    font-size: 24px
+    height: 900
+    width: 1600
+    margin: 0.1
+    code-block-background: true
+    code-block-border-left: false
+    code-line-numbers: false
+    highlight-style: github
+    code-overflow: wrap
+    auto-animate: true
+    embed-resources: true
+---
+
+## About Me {.smaller}
+
+::: {.incremental}
+- CTO at infinitii ai
+- GitHub: stepinski
+- LinkedIn: stepinsky
+- Email: stepinski@gmail.com
+:::
+
+::: {.notes}
+Introduction points:
+- Brief background in software engineering and leadership
+- Current role focusing on AI/ML applications for water management
+- Personal interest in productivity systems and knowledge management
+- Long-time experimenter with various note-taking and organization systems
+:::
+
+
+## Agenda
+
+::: {.incremental}
+1. The Slow Productivity Philosophy
+2. My "Why": Personal Productivity Challenges
+3. My Core Belief: AI-Enhanced Deep Work
+4. The Technical Vision & Implementation
+5. Solution Demonstration: Key AI Pipelines
+6. Conclusion & Resources
+:::
+
+# The Slow Productivity Philosophy
+
+## Cal Newport's Concept
+
+::: {.teksto-isskyrymui}
+> "In his book Slow Productivity, Cal Newport argues that modern work culture prioritizes busyness over effectiveness, leading to stress, shallow work, and burnout."
+:::
+
+::: {.incremental}
+- **Natural pace**
+- **Meaningful work focus**
+- **Distraction reduction**
+:::
+
+::: {.notes}
+In "Slow Productivity," Cal Newport presents a counter-intuitive approach to modern work:
+- Working at a sustainable pace that aligns with natural cognitive rhythms
+- The core insight is that constant busyness is the enemy of meaningful work
+- He argues that automation should remove overhead, not add more digital noise
+- What's revolutionary is the focus on fewer, deeper accomplishments rather than many shallow ones
+- This connects directly to knowledge workers' struggles with fragmented attention
+:::
+
+# My "Why"
+
+## The Problem with Personal Productivity {.smaller}
+
+::: {.fragment .fade-in}
+**Daily routine struggles:**
+:::
+
+::: {.fragment .fade-up}
+- Writing everything in notes but lacking a consistent system
+- Trying various tools but always reverting to basic note-taking
+- Scattered information across notes, emails, and meeting records
+:::
+
+::: {.fragment .fade-left}
+**System failures:**
+:::
+
+::: {.fragment .fade-right}
+- Starting productivity systems but failing to maintain them
+- Difficulty finding and connecting related information
+:::
+
+::: {.notes}
+My personal productivity struggles stem from several key issues:
+- I consistently take notes but struggle to maintain any organizational system for them
+- I've tried dozens of tools (Notion, Todoist, Trello) but always revert to basic note-taking
+- My information is scattered across notes, emails, and various apps with no central source
+- I start productivity systems enthusiastically but abandon them within weeks
+- I can never find related information when I need it or connect past notes to current work
+- The problem isn't lack of discipline - it's that most systems add friction rather than removing it
+:::
+
+## The Note-Taking Struggle {auto-animate=true}
+
+```python
+# What my notes look like:
+notes = [
+    {"date": "2025-03-15", "content": "Team mtg - follow up API keys"},
+]
+```
+
+::: {.notes}
+I've struggled with note organization despite trying many approaches:
+- PARA method worked for a week before I abandoned it
+- Zettelkasten was too rigid for my thinking style
+:::
+
+## The Note-Taking Struggle {auto-animate=true}
+
+```python
+# What my notes look like:
+notes = [
+    {"date": "2025-03-15", "content": "Team mtg - follow up API keys"},
+    {"date": "2025-03-17", "content": "idea for deplymnt process"},
+]
+```
+
+::: {.notes}
+- Various apps promised organization but added complexity
+- I can consistently take notes but struggle to maintain any system for them
+:::
+
+## The Note-Taking Struggle {auto-animate=true}
+
+```python
+# What my notes look like:
+notes = [
+    {"date": "2025-03-15", "content": "Team mtg - follow up API keys"},
+    {"date": "2025-03-17", "content": "idea for deplymnt process"},
+    {"date": "2025-03-20", "content": "todo: revew PR for pipeline"}
+]
+
+# The problem:
+# - Unstructured and disconnected
+# - No time for proper review and organization
+# - Valuable insights get lost
+```
+
+::: {.teksto-blokams}
+This isn't just a personal problem. Studies show knowledge workers spend up to 20% of their time searching for information they've already seen or created.
+:::
+
+::: {.notes}
+- The fundamental issue is that organization requires too much cognitive overhead
+- My notes contain valuable information but in an unusable format
+- This creates anxiety about missing important tasks or ideas
+- The productivity tax of manual organization is simply too high
+:::
+
+# My Core Belief
+
+## AI Can Free Our Creative Potential
+
+::: {.teksto-isskyrymui}
+> Through AI we can automate the dull and time-consuming stuff to free up more creative potential of our minds
+:::
+
+::: {.incremental}
+- Notes organization shouldn't require manual effort
+- Task extraction can be automated
+- Knowledge connections can be discovered automatically
+- **All while maintaining privacy and control**
+:::
+
+::: {.notes}
+My core belief about AI productivity is that it should:
+- Handle the mechanical aspects of organization without requiring behavior change
+- Make connections between ideas that would otherwise remain hidden
+- Discover tasks and priorities without explicit tagging or input
+- Do all this while keeping your data private and under your control
+- The goal isn't to replace thinking but to create space for deeper thinking
+- Most productivity systems fail because they add more work than they remove
+- AI can reduce this overhead if implemented thoughtfully
+- The system should adapt to you rather than forcing you to adapt to it
+:::
+
+## How This Aligns with Slow Productivity
+
+::: {.fragment}
+- **Automate the shallow work**
+  - Let AI handle organizing, connecting, task-tracking
+:::
+
+::: {.fragment}
+- **Preserve mental space for deep work**
+  - Free from organizational overhead
+:::
+
+::: {.fragment}
+- **Reduce cognitive load**
+  - One system instead of many disconnected tools
+:::
+
+::: {.notes}
+This approach perfectly aligns with Newport's Slow Productivity philosophy:
+- By automating organizational tasks, you free up capacity for deep work
+- The system handles the shallow work of organizing, categorizing, and prioritizing
+- This preserves your cognitive resources for creative and strategic thinking
+- Reducing tool switching eliminates a major source of attention fragmentation
+- Research shows context switching can consume up to 40% of productive time
+- Having a single system reduces decision fatigue about where to put information
+- The goal is to make the technology fade into the background of your workflow
+- The best productivity system is one you don't have to think about using
+:::
+
+# The Technical Vision
+
+## Ideal Workflow Components
+
+![Slow Productivity AI Architecture](https://placehold.co/800x400)
+
+::: {.notes}
+The architecture diagram shows how all components interact:
+- Information sources feed into n8n automation workflows
+- The workflows process and route information to appropriate systems
+- LlamaIndex provides the RAG capabilities for semantic search
+- The Local LLM serves as the intelligence layer
+- The knowledge base maintains connections between information
+- Various output formats make the information actionable
+- The system is modular so components can be added or removed
+- All processing happens locally for privacy and control
+:::
+
+## Unified Knowledge Sources {auto-animate=true}
+
+::: {.r-fit-text}
+**Your Digital Life**
+:::
+
+## Unified Knowledge Sources {auto-animate=true}
+
+::: {.r-fit-text}
+**Your Digital Life**
+:::
+
+::: {.incremental}
+- **Obsidian notes** (primary knowledge base)
+- **Supernote handwritten content** (OCR processed)
+- **GitHub Issues** (work tasks)
+- **Email and Teams conversations** (transcribed)
+- **Browser bookmarks and read-later content**
+:::
+
+::: {.teksto-blokams}
+The magic happens when these sources are connected through a single semantic layer, allowing cross-referencing and discovery across previously siloed information.
+:::
+
+::: {.notes}
+The system integrates multiple information sources into a unified knowledge base:
+- Obsidian vault serves as the primary knowledge repository
+- Emails and chat logs are processed through n8n email integration
+- Calendar entries provide context for scheduling and priorities
+- GitHub issues track tasks and project status
+- Web bookmarks and read-later content can be integrated
+- The key innovation is treating all these as a single corpus
+- Information can flow seamlessly between these systems
+- This eliminates the friction of deciding where to put information
+- You can use each tool for its strengths while maintaining connections
+:::
+
+## Core Processing Components
+
+| Component | Role | Slow Productivity Benefit |
+|-----------|------|---------------------------|
+| **Hugging Face Transformers** | Local NLP for meaning extraction | Privacy, no context-switching |
+| **n8n** | Self-hosted automation workflows | Control, no third-party dependencies |
+| **Obsidian + GitHub Issues** | Knowledge and task management | Centralized system, reduced tool switching |
+| **Local LLM** | Same engine for all tools | Consistent context across interfaces |
+
+::: {.notes}
+The technical architecture has four key components working together:
+1. Hugging Face Transformers provide the NLP capabilities for extracting meaning from text
+   - These run locally on your machine for privacy
+   - They handle classification, extraction, and understanding
+
+2. n8n serves as the workflow automation engine
+   - Self-hosted and fully controllable
+   - Connects various systems without third-party dependencies
+   - Handles scheduling and event-based triggers
+
+3. Obsidian and GitHub Issues form the visible interface
+   - Obsidian stores knowledge in portable Markdown format
+   - GitHub Issues tracks actionable items with assignment and notifications
+   - Both tools have excellent mobile apps for on-the-go access
+
+4. Local LLM provides the intelligence layer
+   - Same model used across all interfaces for consistency
+   - Maintains context between different interactions
+   - Runs entirely on your hardware for privacy and reliability
+:::
+
+# Implementation Details
+
+## The Local LLM Setup {auto-animate=true}
+
+```python
+# Core LLM setup
+def setup_local_llm():
+    # Choose model based on your needs
+    pass
+```
+
+::: {.notes}
+The local LLM setup is critical for privacy and performance
+:::
+
+## The Local LLM Setup {auto-animate=true}
+
+```python
+# Core LLM setup
+def setup_local_llm():
+    # Choose model based on your needs
+    """
+    Options:
+    - Llama 3 8B: Good balance
+    - Mistral 7B: Efficient
+    - Phi-3 mini: Lightweight
+    """
+    pass
+```
+
+::: {.notes}
+- Choosing the right model is about balancing capability vs resource usage
+- Llama 3 8B offers the best balance for most MacBook Pro users
+- Mistral 7B is more efficient if you're on older hardware
+:::
+
+## The Local LLM Setup {auto-animate=true}
+
+```python
+# Core LLM setup
+def setup_local_llm():
+    # Choose model based on your needs
+    """
+    Options:
+    - Llama 3 8B: Good balance
+    - Mistral 7B: Efficient
+    - Phi-3 mini: Lightweight
+    """
+    
+    # Install Ollama
+    # curl -fsSL https://ollama.com/install.sh | sh
+    
+    # Start service
+    # ollama pull llama3:8b
+    # OLLAMA_HOST=localhost:11434 ollama serve
+```
+
+::: {.teksto-blokams}
+The choice of LLM model is crucial - it affects both performance and quality. For most MacBook Pro users, Llama 3 8B provides the optimal balance between speed and capability.
+:::
+
+::: {.notes}
+- The Ollama service creates a centralized endpoint that all components use
+- This ensures consistent context and state across interfaces
+- The environment variable configuration preserves context between sessions
+- All processing happens locally - your data never leaves your machine
+:::
+
+## Notes Processing with LlamaIndex
+
+```python {.line-numbers code-line-numbers="8-10|13|16-22"}
+from llama_index import VectorStoreIndex, SimpleDirectoryReader
+from llama_index.llms import Ollama
+
+def process_obsidian_notes():
+    # Path to vault
+    OBSIDIAN_PATH = "/path/to/obsidian/vault"
+    
+    # Load documents
+    documents = SimpleDirectoryReader(
+        OBSIDIAN_PATH, recursive=True
+    ).load_data()
+    
+    # Connect to LLM
+    llm = Ollama(model="llama3:8b", url="localhost:11434")
+    
+    # Create index
+    index = VectorStoreIndex.from_documents(documents)
+    
+    # Extract tasks
+    tasks = []
+    for doc in documents:
+        if "TODO" in doc.text or "- [ ]" in doc.text:
+            tasks.extend(extract_tasks(doc.text, llm))
+    
+    return tasks
+```
+
+::: {.notes}
+- The system uses a detection mechanism for TODO items and checkboxes
+- The extract_tasks function sends each relevant note to the LLM with a specific prompt
+- This extracts both explicit tasks and implied tasks from context
+- The vectorization enables semantic search and relationship discovery
+- You could extend this to handle other document types with minimal modification
+:::
+
+## n8n Automation Workflow
+
+![n8n Workflow for Task Extraction](https://placehold.co/800x400)
+
+::: {.incremental}
+- **Scheduled workflows** run during non-focus time
+- **Event-based triggers** for new notes or changes
+- **Multi-step processing** to extract and structure tasks
+:::
+
+::: {.teksto-isskyrymui}
+Workflows run while you sleep, so all your insights are processed and ready by morning.
+:::
+
+::: {.notes}
+Here I explain the automation pipeline in detail:
+- The workflows run on schedule during non-focus time (early morning or late evening)
+- Event triggers detect new content and changes in the vault
+- The LLM extracts tasks and assigns priorities based on context
+- Only medium-to-high priority tasks are converted to GitHub Issues
+- This preserves your attention for deep work while ensuring nothing falls through cracks
+:::
+
+## Task Management Integration {auto-animate=true}
+
+```python
+# GitHub Issues integration
+def create_github_tasks(tasks):
+    from github import Github
+```
+
+## Task Management Integration {auto-animate=true}
+
+```python
+# GitHub Issues integration
+def create_github_tasks(tasks):
+    from github import Github
+    
+    # Connect to GitHub
+    g = Github(os.environ.get("GITHUB_TOKEN"))
+    repo = g.get_repo("username/tasks-repo")
+```
+
+## Task Management Integration {auto-animate=true}
+
+```python
+# GitHub Issues integration
+def create_github_tasks(tasks):
+    from github import Github
+    
+    # Connect to GitHub
+    g = Github(os.environ.get("GITHUB_TOKEN"))
+    repo = g.get_repo("username/tasks-repo")
+    
+    for task in tasks:
+        # Avoid duplicates
+        if not is_duplicate_task(repo, task["title"]):
+            # Create issue
+            repo.create_issue(
+                title=task["title"],
+                body=f"Source: {task['source']}",
+                labels=[task["priority"]]
+            )
+```
+
+::: {.notes}
+The GitHub integration serves as the action layer of the system:
+- Each extracted task becomes a trackable, assignable GitHub issue
+- The is_duplicate function prevents creating multiple issues for the same task
+- The source tracking preserves connection to original context
+- This gives you the benefits of a task manager without manual entry
+- GitHub Issues provides mobile access, notifications, and collaboration
+- The private repository keeps your personal tasks secure
+- This provides the ideal balance between automation and visibility
+:::
+
+# Solution Demonstration: Key Pipelines
+
+## Demonstration Approach
+
+![Demo Flow Visualization](https://placehold.co/800x400)
+
+::: {.notes}
+The demonstration will include:
+1. A walkthrough of how messy notes are transformed into structured, organized information
+2. A live example of task extraction from several notes into GitHub issues
+3. How the daily focus template helps maintain deep work blocks
+4. Before-and-after examples of how this reduces cognitive overhead
+:::
+
+## Pipeline 1: Notes Improvement {auto-animate=true}
+
+### Before:
+```
+Meeting with team (04/12)
+discussed pipeline issues - john mentioned 
+permissions problem
+```
+
+## Pipeline 1: Notes Improvement {auto-animate=true}
+
+### Before:
+```
+Meeting with team (04/12)
+discussed pipeline issues - john mentioned 
+permissions problem
+todo look into this next week
+API seems slow - maybe caching?
+talk to devops about K8s resources
+```
+
+## Pipeline 1: Notes Improvement {auto-animate=true}
+
+### Before:
+```
+Meeting with team (04/12)
+discussed pipeline issues - john mentioned 
+permissions problem
+todo look into this next week
+API seems slow - maybe caching?
+talk to devops about K8s resources
+```
+
+### After:
+```
+# Team Sync (2025-04-12)
+
+## Participants
+- Team, John
+
+## Topics
+- Pipeline permissions issue
+- API performance concerns
+
+## Actions
+- [ ] Investigate permissions (Due: 4/19)
+- [ ] Discuss K8s with DevOps (Due: 4/15)
+```
+
+::: {.teksto-blokams}
+The transformation happens automatically without you having to change your note-taking behavior. Write naturally, and let AI do the structuring.
+:::
+
+::: {.notes}
+The notes improvement pipeline demonstrates the immediate value:
+- Messy, unstructured notes become organized and actionable
+- Specific tasks with deadlines are automatically extracted
+- Typos and formatting issues get corrected
+- Information is categorized and structured
+- This happens automatically without requiring you to change how you take notes
+- The key benefit is maintaining your natural workflow while getting structured output
+- The result feels like having a personal assistant who cleans up after you
+:::
+
+## Pipeline 2: Project Summary Report {auto-animate=true}
+
+### n8n Workflow:
+```
++------------------+
+| Obsidian Vault   |
+| Change Trigger   |
++--------+---------+
+         |
+```
+
+## Pipeline 2: Project Summary Report {auto-animate=true}
+
+### n8n Workflow:
+```
++------------------+
+| Obsidian Vault   |
+| Change Trigger   |
++--------+---------+
+         |
+         v
++--------+---------+
+| Local LLM Node   |
+| (Extract Tasks)  |
++--------+---------+
+         |
+```
+
+## Pipeline 2: Project Summary Report {auto-animate=true}
+
+### n8n Workflow:
+```
++------------------+      +----------------------+
+| Obsidian Vault   |      | GitHub Issues API    |
+| Change Trigger   |      | (Create Issue)       |
++--------+---------+      +-----------+----------+
+         |                            |
+         v                            |
++--------+---------+                  |
+| Local LLM Node   |                  |
+| (Extract Tasks)  |                  |
++--------+---------+                  |
+         |                            |
+         v                            |
++--------+---------+                  |
+| Task Processing  |                  |
+| (Format & Sort)  |                  |
++--------+---------+                  |
+         |                            |
+         v                            |
++--------+---------+  +---------------+----------+
+| Filter Tasks     +->+ Create GitHub Issue      |
+| (Priority > Med) |  | for Each Extracted Task  |
++------------------+  +--------------------------+
+```
+
+::: {.fragment}
+- **Scheduled workflow** runs daily at 6am (before work)
+:::
+::: {.fragment}
+- Processes new notes and updates since last run
+:::
+::: {.fragment}
+- Generates executive summary of active projects 
+:::
+
+::: {.notes}
+The project summary workflow runs at 6am daily to prepare your morning digest:
+- It performs intelligent extraction by scanning through recent notes
+- The LLM identifies project status mentions, tasks, and deadlines
+- It distinguishes between high-priority actionable items and background tasks
+- This gives you an executive summary to review with your morning coffee
+- The most critical aspect is that this happens without manual organization
+:::
+
+## Pipeline 3: Daily Template {auto-animate=true}
+
+```
+# Daily Focus (2025-04-25)
+
+## Priority Tasks
+1. [API-123] Finalize pipeline params
+```
+
+## Pipeline 3: Daily Template {auto-animate=true}
+
+```
+# Daily Focus (2025-04-25)
+
+## Priority Tasks
+1. [API-123] Finalize pipeline params
+2. [INFRA-45] Review K8s configs 
+3. [TEAM-12] Prepare sprint planning
+
+## Updates
+- PR #234 merged (ML pipeline)
+```
+
+## Pipeline 3: Daily Template {auto-animate=true}
+
+```
+# Daily Focus (2025-04-25)
+
+## Priority Tasks
+1. [API-123] Finalize pipeline params
+2. [INFRA-45] Review K8s configs 
+3. [TEAM-12] Prepare sprint planning
+
+## Updates
+- PR #234 merged (ML pipeline)
+- QA checks passing
+- Docs ready for review
+
+## Focus Blocks
+09:00-11:00: Deep work - API-123
+13:00-14:30: Team meeting
+15:00-17:00: Deep work - INFRA-45
+```
+
+::: {.teksto-isskyrymui}
+Research shows that simply having a clear plan reduces decision fatigue by up to 40% and can save 30 minutes of planning time daily.
+:::
+
+::: {.notes}
+The Daily Focus template is the cornerstone of the slow productivity approach:
+- It's automatically generated each morning at 5am
+- Tasks are pulled from GitHub Issues and prioritized by the LLM
+- Recent updates are gathered from your notes and GitHub
+- The Focus Blocks section helps you plan deep work sessions
+- This template appears automatically in your Obsidian daily note
+- You can adjust it but don't need to create it from scratch
+- Studies show having this structure reduces decision fatigue by up to 40%
+- This simple automation saves about 30 minutes of planning time daily
+:::
+
+# Conclusion
+
+## The Slow Productivity AI Advantage
+
+::: {.incremental}
+- **Consistency without effort** - maintain notes without organizational overhead
+- **Privacy by design** - fully local processing, your data stays yours
+- **Reduced cognitive load** - automation frees mental space for creative work
+- **Deep work preserved** - minimize context switching and distractions
+:::
+
+::: {.fragment .fade-in}
+::: {.teksto-isskyrymui}
+> "The goal isn't faster productivity, but deeper, more meaningful productivity."
+:::
+:::
+
+::: {.notes}
+The system delivers several transformative benefits:
+- You maintain notes consistency without the overhead of organizing them
+- All processing is local, so your personal data never leaves your machine
+- Your mental resources stay focused on creative work instead of organization
+- Deep work is protected by minimizing context switching and admin tasks
+- The privacy aspect is critical - most AI productivity tools send your data to cloud servers
+- This system gives you the AI benefits without the privacy downsides
+- The cognitive load reduction compounds over time - users report feeling "mentally lighter"
+- Most importantly, this system works with your natural habits rather than fighting them
+:::
+
+## Key Takeaways
+
+::: {.incremental}
+1. **Slow productivity is about meaningful output, not speed**
+   - AI should reduce friction, not add more digital noise
+   - Automation should serve deep work, not interrupt it
+
+2. **Privacy and ownership matter**
+   - Local, open-source LLMs make this possible today
+   - Your knowledge base remains fully under your control
+
+3. **Start small, but think holistically**
+   - Begin with one pipeline that solves your biggest pain point
+   - Build toward a system that works the way your mind works
+:::
+
+::: {.teksto-blokams}
+You don't need to overhaul your entire workflow at once. Start with one pipeline, prove its value, and gradually expand your system.
+:::
+
+::: {.notes}
+The core lessons from implementing this system:
+1. Slow productivity prioritizes meaningful accomplishments over the appearance of busyness
+   - The goal isn't to do more things faster, but to focus deeply on what truly matters
+   - AI should reduce friction rather than adding more digital noise
+   - Automation should serve deep work, not interrupt it with notifications
+
+2. Privacy and control are fundamental to a sustainable system
+   - Local LLMs aren't just a privacy choice - they're also more reliable long-term
+   - You maintain full ownership of your knowledge and workflows
+   - This approach is more resilient against service changes or shutdowns
+
+3. Implementation should be incremental but designed cohesively
+   - Start with one pipeline that solves your biggest pain point
+   - Add components gradually as you validate their usefulness
+   - Focus on reducing friction rather than adding features
+   - The most successful system is the one you'll actually use
+:::
+
+## Resources
+
+- GitHub repository: [github.com/stepinski/slow-productivity-ai](https://github.com/stepinski/slow-productivity-ai)
+- Presentation slides: [github.com/stepinski/pycon-lithuania-2025](https://github.com/stepinski/pycon-lithuania-2025)
+- Recommended reading: "Slow Productivity" by Cal Newport
+
+## Questions? {background-image="images/q_cols_t.png" background-opacity="0.3"}
+
+<!-- ![](images/pycon_lithuania_logo.png){.centered-logo} -->

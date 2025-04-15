@@ -7,8 +7,8 @@ date: "April 25, 2025"
 format:
   revealjs:
     theme: [default, styles/custom.scss]
-    logo: "images/PyConLT_horizontalus_baltas-konturas_RGB.png"
-    footer: "PyCon Lithuania 2025"
+    logo: "images/pycon_lithuania_logo.png"
+    footer: "PyCon LT 2025"
     slide-number: true
     navigation-mode: vertical
     controls: true
@@ -16,7 +16,7 @@ format:
     background-transition: fade
     preview-links: auto
     font-size: 24px
-    font-family: "JetBrains Mono, Fira Code, monospace"
+    font-family: "Roboto, sans-serif"
     height: 900
     width: 1600
     margin: 0.1
@@ -24,10 +24,6 @@ format:
     code-block-border-left: false
     code-line-numbers: false
     highlight-style: github
-    toc: true 
-    toc-depth: 1
-    toc-title: "Agenda"
-    toc-location: left
 ---
 ## About Me {.smaller}
 
@@ -44,18 +40,15 @@ Introduction points:
 - Long-time experimenter with various note-taking and organization systems
 :::
 
+
 ## Agenda
 
-::: {.toc depth=1}
-:::
-<!-- ## Agenda -->
-<!---->
-<!-- 1. The Slow Productivity Concept -->
-<!-- 2. My "Why": The Problem with Personal Productivity -->
-<!-- 3. The Vision: AI-Enhanced Deep Work -->
-<!-- 4. Technical Implementation -->
-<!-- 5. Solution Demonstration: Key Pipelines -->
-<!-- 6. Conclusion & Q&A -->
+1. The Slow Productivity Philosophy
+2. My "Why": Personal Productivity Challenges
+3. My Core Belief: AI-Enhanced Deep Work
+4. The Technical Vision & Implementation
+5. Solution Demonstration: Key AI Pipelines
+6. Conclusion & Resources
 
 # The Slow Productivity Philosophy
 
@@ -558,8 +551,8 @@ The core lessons from implementing this system:
 - Presentation slides: [github.com/stepinski/pycon-lithuania-2025](https://github.com/stepinski/pycon-lithuania-2025)
 - Recommended reading: "Slow Productivity" by Cal Newport
 
-## Questions?
+## Questions? {.question-slide}
 
-<!-- Thank you for your attention! -->
+![](images/orange-pycon-lithuania-2025.png){.main-image}
 
-![](images/orange-pycon-lithuania-2025.png){width=20px}
+![](images/pycon_lithuania_logo.png){.centered-logo}
