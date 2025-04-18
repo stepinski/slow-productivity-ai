@@ -1,6 +1,8 @@
 {
-  "obsidian_vault_path": "/Users/unman/ws/slow-productivity-ai/data",
+  "obsidian_vault_path": "/Users/unman/ws/notes_sub/",
   "llm_model": "llama3:8b",
   "llm_url": "http://localhost:11434",
+  "chroma_db_path": ".indices/chroma_db",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
   "index_dir": "./indices/obsidian_index"
 }

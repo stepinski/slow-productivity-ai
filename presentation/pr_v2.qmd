@@ -1,6 +1,6 @@
 ---
 title: "Slow Productivity AI"
-subtitle: "to free us from meaningless tedium of cubicle job"
+subtitle: "to free us from meaningless tasks"
 # subtitle: "Enhancing Deep Work with Open-Source Automation"
 author: "Piotr Stepinski"
 institute: "Infinitii ai"
@@ -524,41 +524,69 @@ permissions problem
 
 ### Before:
 ```
-Meeting with team (04/12)
-discussed pipeline issues - john mentioned 
-permissions problem
-todo look into this next week
-API seems slow - maybe caching?
-talk to devops about K8s resources
+plan:
+- Montreal -> new model (testing and fixing) -> goal by EOW to setup next meeting
+- Tesler pipelines -> technical debt due to iandi new deployments and scaling
+- IandI in Tesler - weekly dwp
 ```
 
 ## Pipeline 1: Notes Improvement {auto-animate=true}
 
 ### Before:
 ```
-Meeting with team (04/12)
-discussed pipeline issues - john mentioned 
-permissions problem
-todo look into this next week
-API seems slow - maybe caching?
-talk to devops about K8s resources
+plan:
+- Montreal -> new model (testing and fixing) -> goal by EOW to setup next meeting
+- Tesler pipelines -> technical debt due to iandi new deployments and scaling
+- IandI in Tesler - weekly dwp
 ```
+## Project Plan Update
 
-### After:
-```
-# Team Sync (2025-04-12)
+---
 
-## Participants
-- Team, John
+### Metadata
 
-## Topics
-- Pipeline permissions issue
-- API performance concerns
+| Property         | Value                        |
+|------------------|------------------------------|
+| para_category    | 3-Resources                  |
+| type             | note                         |
+| status           | active                       |
+| enhanced_date    | 2025-04-16 19:19:09          |
+| enhanced_method  | llm                          |
 
-## Actions
-- [ ] Investigate permissions (Due: 4/19)
-- [ ] Discuss K8s with DevOps (Due: 4/15)
-```
+---
+
+### Current Focus – Montreal
+
+New model development, testing, and fixing  
+Goal: Have everything set up for the next meeting by **EOW (End of Week)**
+
+<ul>
+  <li><input type="checkbox"> Complete testing and fixing for the new model</li>
+  <li><input type="checkbox"> Set up next meeting with all necessary materials ready</li>
+</ul>
+
+---
+
+### Tesler Pipelines – Technical Debt
+
+Due to recent <em>IandI</em> deployments and scaling, there is a need to address <strong>technical debt</strong> in Tesler pipelines.
+
+<ul>
+  <li><input type="checkbox"> Review and prioritize technical debt items</li>
+  <li><input type="checkbox"> Develop a plan to resolve the technical debt</li>
+</ul>
+
+---
+
+### IandI in Tesler – Weekly DWP
+
+Continue to monitor and manage <strong>IandI’s Daily Work Plan (DWP)</strong> on a weekly basis.
+
+---
+
+## Source
+
+<code>[[ocm today]]</code>
 
 ::: {.teksto-blokams}
 The transformation happens automatically without you having to change your note-taking behavior. Write naturally, and let AI do the structuring.

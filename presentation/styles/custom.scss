@@ -268,3 +268,9 @@ $presentation-font-family: 'Open Sans', sans-serif;
 .notes {
   display: none;
 }
+
+input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
